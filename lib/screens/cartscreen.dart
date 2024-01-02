@@ -1,3 +1,5 @@
+import 'package:armada/screens/checkoutscreen.dart';
+import 'package:armada/screens/homescreen.dart';
 import 'package:armada/widgets/cartitemswidget.dart';
 import 'package:armada/widgets/cartpromotionwidget.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +34,10 @@ class _CartScreenState extends State<CartScreen> {
                 width: 10,
               ),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
               },
             )),
         title: Text(
@@ -62,7 +67,7 @@ class _CartScreenState extends State<CartScreen> {
         width: double.infinity,
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -77,11 +82,16 @@ class _CartScreenState extends State<CartScreen> {
                             fontWeight: FontWeight.w400, fontSize: 14.sp)),
                   ],
                 ),
-                SizedBox(height: 10.h),
-                Container(
+                // SizedBox(height: 10.h),
+                /*Container(
                   height: 320.h,
                   width: double.infinity,
                   child: const CartitemsWidget(),
+                ),*/
+
+                const Padding(
+                  padding: EdgeInsets.only(top: 14),
+                  child: CartitemsWidget(),
                 ),
                 SizedBox(height: 15.h),
                 Text('Pomotions Applied',
@@ -199,7 +209,12 @@ class _CartScreenState extends State<CartScreen> {
                 ],
               ),
               MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CheckoutScreen()));
+                },
                 color: const Color.fromARGB(244, 219, 32, 39),
                 height: 40.h,
                 minWidth: 100.w,

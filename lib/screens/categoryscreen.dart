@@ -1,5 +1,6 @@
 //import 'package:armada/widgets/subcatwidget.dart';
 import 'package:armada/screens/cartscreen.dart';
+import 'package:armada/screens/searchresultscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -128,17 +129,28 @@ class _CategoryScreenState extends State<CategoryScreen> {
                               child: Column(
                                 children: [
                                   ListTile(
-                                    leading: Container(
-                                      height: 100.h,
-                                      child: Image.asset(
-                                        'assets/images/categories/NoPath - Copy (11).png',
-                                        fit: BoxFit.fitHeight,
-                                        // height: 60.h,
+                                    title: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const SearchResult()));
+                                      },
+                                      child: Row(
+                                        children: [
+                                          Image.asset(
+                                            'assets/images/categories/NoPath - Copy (11).png',
+                                            fit: BoxFit.fitHeight,
+                                            height: 50.h,
+                                          ),
+                                          SizedBox(width: 15.w),
+                                          Text(
+                                            'Fruits & Vegetables',
+                                            style: TextStyle(fontSize: 12.sp),
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                    title: Text(
-                                      'Fruits & Vegetables',
-                                      style: TextStyle(fontSize: 12.sp),
                                     ),
                                     trailing: isExpanded
                                         ? SvgPicture.asset(

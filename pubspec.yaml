@@ -69,7 +69,9 @@ flutter:
   assets:
     - assets/svg/
     - assets/svg/home/
+    - assets/svg/drawer/
     - assets/svg/categories/
+    - assets/svg/search_result/
     - assets/home/
     - assets/images/categories/
   #   - images/a_dot_ham.jpeg

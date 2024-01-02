@@ -21,57 +21,55 @@ class _SlidingWisgetState extends State<SlidingWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          InkWell(
-            child: CarouselSlider(
-              items: imageList
-                  .map((item) => Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 5.w),
-                        child: Container(
-                          child: Image.asset(
-                            item['image_path'],
-                            fit: BoxFit.fitHeight,
-                            width: double.infinity,
-                          ),
+    return Column(
+      children: [
+        InkWell(
+          child: CarouselSlider(
+            items: imageList
+                .map((item) => Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5.w),
+                      child: Container(
+                        child: Image.asset(
+                          item['image_path'],
+                          fit: BoxFit.fitHeight,
+                          width: double.infinity,
                         ),
-                      ))
-                  .toList(),
-              options: CarouselOptions(
-                scrollPhysics: const BouncingScrollPhysics(),
-                autoPlay: true,
-                viewportFraction: 1,
-                aspectRatio: 2,
-                enableInfiniteScroll: true,
-                reverse: false,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    _currentIndex = index;
-                  });
-                },
-              ),
+                      ),
+                    ))
+                .toList(),
+            options: CarouselOptions(
+              scrollPhysics: const BouncingScrollPhysics(),
+              autoPlay: true,
+              viewportFraction: 1,
+              aspectRatio: 2,
+              enableInfiniteScroll: true,
+              reverse: false,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
             ),
-            onTap: () {
-              print('clicked');
-            },
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(3, (index) {
-              return Container(
-                width: 8.w,
-                height: 4.h,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: _currentIndex == index ? Colors.red : Colors.grey,
-                ),
-              );
-            }),
-          ),
-        ],
-      ),
+          onTap: () {
+            print('clicked');
+          },
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(3, (index) {
+            return Container(
+              width: 8.w,
+              height: 4.h,
+              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: _currentIndex == index ? Colors.red : Colors.grey,
+              ),
+            );
+          }),
+        ),
+      ],
     );
   }
 }

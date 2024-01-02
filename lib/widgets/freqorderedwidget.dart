@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class FrequentlyOrdered extends StatefulWidget {
   const FrequentlyOrdered({super.key});
@@ -27,307 +28,97 @@ class _FrequentlyOrderedState extends State<FrequentlyOrdered> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: ListView.separated(
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            return Row(
-              children: [
-                SizedBox(width: 20.w),
-                Container(
-                  height: 230.h,
-                  width: 185.w,
-                  //color: Colors.red,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 10.w, top: 10.h),
-                    child: Column(
-                      //crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          'assets/home/1.png',
-                          height: 100.h,
-                          width: 75.w,
-                        ),
-                        SizedBox(height: 4.h),
-                        Text(
-                          'Stork Toffifee 400g',
-                          style: TextStyle(fontSize: 12.sp),
-                        ),
-                        SizedBox(height: 10.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              //crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Cs',
-                                      style: TextStyle(fontSize: 10.sp),
-                                    ),
-                                    SizedBox(width: 15.w),
-                                    Icon(Icons.keyboard_arrow_down,
-                                        color: Colors.grey, size: 12.sp),
-                                  ],
-                                ),
-                                SizedBox(height: 3.h),
-                                Text(
-                                  'AED 30.00',
-                                  style: TextStyle(
-                                      fontSize: 8.sp, color: Colors.red),
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 4.w),
-                            Container(
-                              height: 25.h,
-                              width: 25.w,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  color: Color.fromARGB(255, 253, 198, 192)
-                                      .withOpacity(0.5)),
-                              child: OutlinedButton(
-                                onPressed: () {
-                                  decrementCounter();
-                                },
-                                style: OutlinedButton.styleFrom(
-                                    side: const BorderSide(
-                                      color: Colors.transparent,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
-                                    padding: EdgeInsets.only(
-                                        left: 2.w, bottom: 2.h)),
-                                child: Text(
-                                  '-',
-                                  style: TextStyle(
-                                      fontSize: 16.sp, color: Colors.red),
-                                ),
-                              ),
-                            ),
-                            Text('$counter'),
-                            Container(
-                              height: 25.h,
-                              width: 25.w,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  color:
-                                      const Color.fromARGB(255, 253, 198, 192)
-                                          .withOpacity(0.5)),
-                              child: OutlinedButton(
-                                onPressed: () {
-                                  incrementCounter();
-                                },
-                                style: OutlinedButton.styleFrom(
-                                    side: const BorderSide(
-                                      color: Colors.transparent,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
-                                    padding: EdgeInsets.only(
-                                        left: 2.w, bottom: 2.h)),
-                                child: Text(
-                                  '+',
-                                  style: TextStyle(
-                                      fontSize: 16.sp, color: Colors.red),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 12.h),
-                        Row(
-                          children: [
-                            Container(
-                              height: 25.h,
-                              width: 25.w,
-                              child: OutlinedButton(
-                                onPressed: () {},
-                                style: OutlinedButton.styleFrom(
-                                    side: BorderSide(
-                                      color: Color.fromARGB(255, 253, 198, 192)
-                                          .withOpacity(0.7),
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
-                                    padding: EdgeInsets.only(
-                                        left: 2.w, bottom: 2.h)),
-                                child: Text(
-                                  '+',
-                                  style: TextStyle(
-                                      fontSize: 16.sp, color: Colors.red),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 12.w),
-                            Text(
-                              'Add Another UOM',
-                              style: TextStyle(fontSize: 12.sp),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
+    return GridView.builder(
+      itemCount: 8,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: .8,
+          crossAxisSpacing: 5,
+          mainAxisSpacing: 10),
+      itemBuilder: (context, index) => Container(
+        height: 230.h,
+        width: 185.w,
+        //color: Colors.red,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10), color: Colors.white),
+        child: Padding(
+          padding: EdgeInsets.only(left: 10.w, top: 10.h),
+          child: Column(
+            //crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                'assets/home/1.png',
+                height: 100.h,
+                width: 75.w,
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                'Stork Toffifee 400g',
+                style: TextStyle(fontSize: 12.sp),
+              ),
+              SizedBox(height: 10.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    //crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Cs',
+                            style: TextStyle(fontSize: 10.sp),
+                          ),
+                          SizedBox(width: 15.w),
+                          Icon(
+                            Icons.keyboard_arrow_down,
+                            color: Colors.grey,
+                            size: 12.sp,
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 3.h),
+                      Text(
+                        'AED 30.00',
+                        style: TextStyle(fontSize: 8.sp, color: Colors.red),
+                      ),
+                    ],
                   ),
-                ),
-                SizedBox(width: 5.w),
-                Container(
-                  height: 230.h,
-                  width: 185.w,
-                  //color: Colors.red,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 10.w, top: 10.h),
-                    child: Column(
-                      //crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          'assets/home/1.png',
-                          height: 100.h,
-                          width: 75.w,
-                        ),
-                        SizedBox(height: 4.h),
-                        Text(
-                          'Stork Toffifee 400g',
-                          style: TextStyle(fontSize: 12.sp),
-                        ),
-                        SizedBox(height: 10.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              //crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Cs',
-                                      style: TextStyle(fontSize: 10.sp),
-                                    ),
-                                    SizedBox(width: 15.w),
-                                    Icon(Icons.keyboard_arrow_down,
-                                        color: Colors.grey, size: 12.sp),
-                                  ],
-                                ),
-                                SizedBox(height: 3.h),
-                                Text(
-                                  'AED 30.00',
-                                  style: TextStyle(
-                                      fontSize: 8.sp, color: Colors.red),
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 4.w),
-                            Container(
-                              height: 25.h,
-                              width: 25.w,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  color: Color.fromARGB(255, 253, 198, 192)
-                                      .withOpacity(0.5)),
-                              child: OutlinedButton(
-                                onPressed: () {
-                                  decrementCounter();
-                                },
-                                style: OutlinedButton.styleFrom(
-                                    side: const BorderSide(
-                                      color: Colors.transparent,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
-                                    padding: EdgeInsets.only(
-                                        left: 2.w, bottom: 2.h)),
-                                child: Text(
-                                  '-',
-                                  style: TextStyle(
-                                      fontSize: 16.sp, color: Colors.red),
-                                ),
-                              ),
-                            ),
-                            Text('$counter'),
-                            Container(
-                              height: 25.h,
-                              width: 25.w,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  color: Color.fromARGB(255, 253, 198, 192)
-                                      .withOpacity(0.5)),
-                              child: OutlinedButton(
-                                onPressed: () {
-                                  incrementCounter();
-                                },
-                                style: OutlinedButton.styleFrom(
-                                    side: const BorderSide(
-                                      color: Colors.transparent,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
-                                    padding: EdgeInsets.only(
-                                        left: 2.w, bottom: 2.h)),
-                                child: Text(
-                                  '+',
-                                  style: TextStyle(
-                                      fontSize: 16.sp, color: Colors.red),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 12.h),
-                        Row(
-                          children: [
-                            Container(
-                              height: 25.h,
-                              width: 25.w,
-                              child: OutlinedButton(
-                                onPressed: () {},
-                                style: OutlinedButton.styleFrom(
-                                    side: BorderSide(
-                                      color: Color.fromARGB(255, 253, 198, 192)
-                                          .withOpacity(0.7),
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
-                                    padding: EdgeInsets.only(
-                                        left: 2.w, bottom: 2.h)),
-                                child: Text(
-                                  '+',
-                                  style: TextStyle(
-                                      fontSize: 16.sp, color: Colors.red),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 12.w),
-                            Text(
-                              'Add Another UOM',
-                              style: TextStyle(fontSize: 12.sp),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
+                  SizedBox(width: 4.w),
+                  GestureDetector(
+                    onTap: () {
+                      decrementCounter();
+                    },
+                    child: SvgPicture.asset('assets/svg/home/minus.svg'),
                   ),
-                )
-              ],
-            );
-          },
-          separatorBuilder: (context, ind) {
-            return SizedBox(
-              height: 10.h,
-            );
-          },
-          itemCount: 4,
+                  Text('$counter'),
+                  GestureDetector(
+                    onTap: () {
+                      incrementCounter();
+                    },
+                    child: SvgPicture.asset('assets/svg/home/plus.svg'),
+                  ),
+                ],
+              ),
+              SizedBox(height: 12.h),
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: SvgPicture.asset('assets/svg/home/adduom.svg'),
+                  ),
+                  SizedBox(width: 12.w),
+                  Text(
+                    'Add Another UOM',
+                    style: TextStyle(fontSize: 12.sp),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

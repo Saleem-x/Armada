@@ -28,34 +28,31 @@ class SubcatWidgetState extends State<SubcatWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-          child: Column(
-        children: [
-          SizedBox(height: 16),
-          Container(
-            height: 100,
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                crossAxisSpacing: 8.0,
-                mainAxisSpacing: 8.0,
-              ),
-              scrollDirection: Axis.horizontal,
-              itemCount: cardList.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 100,
-                  height: 80,
-                  color: Colors.red,
-                  alignment: Alignment.center,
-                  child: Text(cardList[index]),
-                );
-              },
+    return Column(
+      children: [
+        SizedBox(height: 16),
+        Container(
+          height: 100,
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              crossAxisSpacing: 8.0,
+              mainAxisSpacing: 8.0,
             ),
+            scrollDirection: Axis.horizontal,
+            itemCount: cardList.length,
+            itemBuilder: (context, index) {
+              return Container(
+                width: 100,
+                height: 80,
+                color: Colors.red,
+                alignment: Alignment.center,
+                child: Text(cardList[index]),
+              );
+            },
           ),
-        ],
-      )),
+        ),
+      ],
     );
   }
 }
