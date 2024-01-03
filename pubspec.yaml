@@ -41,6 +41,7 @@ dependencies:
   pin_code_fields: ^8.0.1
   carousel_slider: ^4.2.1
   dotted_line: ^3.2.2
+  intl: ^0.17.0
   
 
 dev_dependencies:
@@ -70,10 +71,12 @@ flutter:
     - assets/svg/
     - assets/svg/home/
     - assets/svg/drawer/
+    - assets/svg/drawer/optassets/
     - assets/svg/categories/
     - assets/svg/search_result/
     - assets/home/
     - assets/images/categories/
+    - assets/images/drawer/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

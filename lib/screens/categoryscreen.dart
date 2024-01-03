@@ -13,7 +13,9 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-  bool isExpanded = false;
+  // bool isExpanded = false;
+  // int selectedIndex = -1;
+  List<bool> isExpandedList = List.generate(8, (index) => false);
   int selectedIndex = -1;
 
   @override
@@ -112,16 +114,25 @@ class _CategoryScreenState extends State<CategoryScreen> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                selectedIndex = index;
-                                isExpanded = !isExpanded;
+                                // selectedIndex = index;
+                                // isExpanded = !isExpanded;
+                                if (selectedIndex == index) {
+                                  isExpandedList[index] =
+                                      !isExpandedList[index];
+                                } else {
+                                  selectedIndex = index;
+                                  isExpandedList =
+                                      List.generate(8, (index) => false);
+                                  isExpandedList[index] = true;
+                                }
                               });
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: isExpanded
+                                  color: isExpandedList[index]
                                       ? Colors.teal.withOpacity(0.1)
                                       : Colors.white,
-                                  border: isExpanded
+                                  border: isExpandedList[index]
                                       ? Border.all(color: Colors.transparent)
                                       : Border.all(
                                           color: Colors.grey.withOpacity(0.3)),
@@ -152,17 +163,19 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                         ],
                                       ),
                                     ),
-                                    trailing: isExpanded
+                                    trailing: isExpandedList[index]
                                         ? SvgPicture.asset(
-                                            'assets/svg/categories/down.svg')
+                                            'assets/svg/categories/down.svg',
+                                          )
                                         : SvgPicture.asset(
-                                            'assets/svg/categories/right.svg'),
+                                            'assets/svg/categories/right.svg',
+                                          ),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-                          if (isExpanded)
+                          if (isExpandedList[index])
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: 10.h),
                               child: YourNewWidget(),

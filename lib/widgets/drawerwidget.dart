@@ -1,3 +1,4 @@
+import 'package:armada/screens/orders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -17,7 +18,7 @@ class _MyDrawerState extends State<MyDrawer> {
         padding: EdgeInsets.zero,
         children: [
           Container(
-            height: 330,
+            height: 345,
             child: DrawerHeader(
                 child: Column(
               children: [
@@ -44,8 +45,11 @@ class _MyDrawerState extends State<MyDrawer> {
                 SizedBox(height: 10.h),
                 Row(
                   children: [
-                    SvgPicture.asset('assets/svg/drawer/user.svg'),
-                    SizedBox(width: 35.w),
+                    SvgPicture.asset(
+                      'assets/svg/drawer/user.svg',
+                      height: 20,
+                    ),
+                    SizedBox(width: 28.w),
                     const Text('Vipin Goutham',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
@@ -56,8 +60,11 @@ class _MyDrawerState extends State<MyDrawer> {
                 SizedBox(height: 10.h),
                 Row(
                   children: [
-                    SvgPicture.asset('assets/svg/drawer/phone-call.svg'),
-                    SizedBox(width: 35.w),
+                    SvgPicture.asset(
+                      'assets/svg/drawer/phone-call.svg',
+                      height: 20,
+                    ),
+                    SizedBox(width: 28.w),
                     const Text('502544312',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
@@ -68,8 +75,11 @@ class _MyDrawerState extends State<MyDrawer> {
                 SizedBox(height: 10.h),
                 Row(
                   children: [
-                    SvgPicture.asset('assets/svg/drawer/email.svg'),
-                    SizedBox(width: 35.w),
+                    SvgPicture.asset(
+                      'assets/svg/drawer/email.svg',
+                      height: 20,
+                    ),
+                    SizedBox(width: 28.w),
                     const Text('Roshni@turbosoft.technology',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
@@ -158,9 +168,14 @@ class _MyDrawerState extends State<MyDrawer> {
             )),
           ),
           ListTile(
-            onTap: () {},
-            leading: SvgPicture.asset('assets/svg/drawer/orders.svg'),
-            title: const Text('Orders'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const OrderScreen()));
+            },
+            leading: Image.asset('assets/images/drawer/orders.png'),
+            title: const Text(
+              'Orders',
+            ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
@@ -168,11 +183,16 @@ class _MyDrawerState extends State<MyDrawer> {
                 style: TextStyle(fontSize: 11.sp),
               ),
             ),
-            trailing: SvgPicture.asset('assets/svg/categories/right.svg'),
+            trailing: SvgPicture.asset(
+              'assets/svg/categories/right.svg',
+            ),
           ),
           ListTile(
             onTap: () {},
-            leading: SvgPicture.asset('assets/svg/drawer/invoice.svg'),
+            leading: SvgPicture.asset(
+              'assets/svg/drawer/changepass1.svg',
+              height: 25.h,
+            ),
             title: const Text('Invoices'),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
@@ -185,7 +205,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {},
-            leading: SvgPicture.asset('assets/svg/drawer/invoice.svg'),
+            leading: Image.asset('assets/images/drawer/invoice.png'),
             title: const Text('Oustanding Invoices'),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
@@ -198,7 +218,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {},
-            leading: SvgPicture.asset('assets/svg/drawer/brochure.svg'),
+            leading: Image.asset('assets/images/drawer/brochure.png'),
             title: const Text('Brochures'),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
@@ -211,7 +231,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {},
-            leading: SvgPicture.asset('assets/svg/drawer/support.svg'),
+            leading: Image.asset('assets/images/drawer/support.png'),
             title: const Text('Support'),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
@@ -224,7 +244,8 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {},
-            leading: SvgPicture.asset('assets/svg/drawer/changepass.svg'),
+            leading:
+                SvgPicture.asset('assets/svg/drawer/optassets/changepass.svg'),
             title: const Text('Change Password'),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
@@ -237,7 +258,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {},
-            leading: SvgPicture.asset('assets/svg/drawer/logout.svg'),
+            leading: Image.asset('assets/images/drawer/logout.png'),
             title: const Text('Logout'),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),

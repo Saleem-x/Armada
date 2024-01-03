@@ -10,18 +10,19 @@ class FrequentlyOrdered extends StatefulWidget {
 }
 
 class _FrequentlyOrderedState extends State<FrequentlyOrdered> {
-  int counter = 1;
+  // int counter = 1;
+  List<int> counters = List.generate(8, (index) => 1);
 
-  void incrementCounter() {
+  void incrementCounter(int index) {
     setState(() {
-      counter++;
+      counters[index]++;
     });
   }
 
-  void decrementCounter() {
-    if (counter > 1) {
+  void decrementCounter(int index) {
+    if (counters[index] > 1) {
       setState(() {
-        counter--;
+        counters[index]--;
       });
     }
   }
@@ -73,10 +74,13 @@ class _FrequentlyOrderedState extends State<FrequentlyOrdered> {
                             style: TextStyle(fontSize: 10.sp),
                           ),
                           SizedBox(width: 15.w),
-                          Icon(
-                            Icons.keyboard_arrow_down,
-                            color: Colors.grey,
-                            size: 12.sp,
+                          GestureDetector(
+                            onTap: () {},
+                            child: Icon(
+                              Icons.keyboard_arrow_down,
+                              color: Colors.grey,
+                              size: 12.sp,
+                            ),
                           ),
                         ],
                       ),
@@ -90,14 +94,14 @@ class _FrequentlyOrderedState extends State<FrequentlyOrdered> {
                   SizedBox(width: 4.w),
                   GestureDetector(
                     onTap: () {
-                      decrementCounter();
+                      decrementCounter(index);
                     },
                     child: SvgPicture.asset('assets/svg/home/minus.svg'),
                   ),
-                  Text('$counter'),
+                  Text('${counters[index]}'),
                   GestureDetector(
                     onTap: () {
-                      incrementCounter();
+                      incrementCounter(index);
                     },
                     child: SvgPicture.asset('assets/svg/home/plus.svg'),
                   ),

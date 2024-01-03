@@ -70,7 +70,7 @@ class VerifyScreen extends StatelessWidget {
                   SizedBox(height: 28.h),
                   MaterialButton(
                     onPressed: () {},
-                    color: Color.fromARGB(244, 219, 32, 39),
+                    color: const Color.fromARGB(244, 219, 32, 39),
                     height: 42.h,
                     minWidth: 140.w,
                     shape: RoundedRectangleBorder(
