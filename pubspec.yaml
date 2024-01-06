@@ -70,8 +70,8 @@ flutter:
   assets:
     - assets/svg/
     - assets/svg/home/
+    - assets/svg/orders/
     - assets/svg/drawer/
-    - assets/svg/drawer/optassets/
     - assets/svg/categories/
     - assets/svg/search_result/
     - assets/home/

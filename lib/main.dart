@@ -16,8 +16,7 @@ class ArmadaApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
-              scaffoldBackgroundColor: const Color(0xFFf6f6f6),
-              fontFamily: 'Inter'),
+              scaffoldBackgroundColor: Colors.white, fontFamily: 'Inter'),
           debugShowCheckedModeBanner: false,
           home: const LoginScreen(),
         );

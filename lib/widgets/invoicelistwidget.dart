@@ -1,28 +1,30 @@
-import 'package:armada/screens/oderdetailsscreen.dart';
+import 'package:armada/screens/invoicedetailsscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class orderlistWidget extends StatefulWidget {
-  const orderlistWidget({super.key});
+class InvoiceListWidget extends StatefulWidget {
+  const InvoiceListWidget({super.key});
 
   @override
-  State<orderlistWidget> createState() => _orderlistWidgetState();
+  State<InvoiceListWidget> createState() => _InvoiceListWidgetState();
 }
 
-class _orderlistWidgetState extends State<orderlistWidget> {
+class _InvoiceListWidgetState extends State<InvoiceListWidget> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const OrderDetails()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const InoiceDetailsScreen()));
           },
           child: Column(
             children: [
               Container(
-                height: 75.h,
+                height: 60.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.transparent, // Set the background color
@@ -39,19 +41,13 @@ class _orderlistWidgetState extends State<orderlistWidget> {
                         children: [
                           SizedBox(height: 10.h),
                           Text(
-                            'ORD#1200125551',
+                            'INV1200022',
                             style: TextStyle(
                                 fontWeight: FontWeight.w400, fontSize: 14.sp),
                           ),
                           SizedBox(height: 2.h),
                           Text(
-                            'Ordered on 16 Aug 2021',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w400, fontSize: 10.sp),
-                          ),
-                          SizedBox(height: 2.h),
-                          Text(
-                            'Expected delivery ob 18 Aug 2021 ',
+                            '16 Aug 2021',
                             style: TextStyle(
                                 fontWeight: FontWeight.w400, fontSize: 10.sp),
                           ),
@@ -63,7 +59,7 @@ class _orderlistWidgetState extends State<orderlistWidget> {
                         children: [
                           SizedBox(height: 10.h),
                           Text(
-                            'Ordered',
+                            'Unpaid',
                             style: TextStyle(
                                 fontSize: 12.sp,
                                 color: const Color.fromARGB(244, 219, 32, 39)),
@@ -73,13 +69,6 @@ class _orderlistWidgetState extends State<orderlistWidget> {
                             'AED 1025.00',
                             style: TextStyle(
                               fontSize: 12.sp,
-                            ),
-                          ),
-                          SizedBox(height: 2.h),
-                          Text(
-                            '16 Items',
-                            style: TextStyle(
-                              fontSize: 10.sp,
                             ),
                           ),
                         ],
@@ -93,7 +82,7 @@ class _orderlistWidgetState extends State<orderlistWidget> {
           ),
         );
       },
-      itemCount: 4,
+      itemCount: 12,
     );
   }
 }

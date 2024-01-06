@@ -1,3 +1,4 @@
+import 'package:armada/screens/invoicescreen.dart';
 import 'package:armada/screens/orders.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -172,9 +173,11 @@ class _MyDrawerState extends State<MyDrawer> {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const OrderScreen()));
             },
-            leading: Image.asset('assets/images/drawer/orders.png'),
-            title: const Text(
+            leading:
+                Image.asset('assets/images/drawer/orders.png', height: 25.h),
+            title: Text(
               'Orders',
+              style: TextStyle(fontSize: 14.sp),
             ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
@@ -188,12 +191,18 @@ class _MyDrawerState extends State<MyDrawer> {
             ),
           ),
           ListTile(
-            onTap: () {},
-            leading: SvgPicture.asset(
-              'assets/svg/drawer/changepass1.svg',
-              height: 25.h,
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const InvoiceScreen()));
+            },
+            leading:
+                Image.asset('assets/images/drawer/invoice.png', height: 25.h),
+            title: Text(
+              'Invoices',
+              style: TextStyle(fontSize: 14.sp),
             ),
-            title: const Text('Invoices'),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
@@ -205,8 +214,12 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {},
-            leading: Image.asset('assets/images/drawer/invoice.png'),
-            title: const Text('Oustanding Invoices'),
+            leading:
+                Image.asset('assets/images/drawer/invoice.png', height: 25.h),
+            title: Text(
+              'Oustanding Invoices',
+              style: TextStyle(fontSize: 14.sp),
+            ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
@@ -218,8 +231,12 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {},
-            leading: Image.asset('assets/images/drawer/brochure.png'),
-            title: const Text('Brochures'),
+            leading:
+                Image.asset('assets/images/drawer/brochure.png', height: 25.h),
+            title: Text(
+              'Brochures',
+              style: TextStyle(fontSize: 14.sp),
+            ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
@@ -231,8 +248,12 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {},
-            leading: Image.asset('assets/images/drawer/support.png'),
-            title: const Text('Support'),
+            leading:
+                Image.asset('assets/images/drawer/support.png', height: 25.h),
+            title: Text(
+              'Support',
+              style: TextStyle(fontSize: 14.sp),
+            ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
@@ -244,9 +265,14 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {},
-            leading:
-                SvgPicture.asset('assets/svg/drawer/optassets/changepass.svg'),
-            title: const Text('Change Password'),
+            leading: Image.asset(
+              'assets/images/drawer/changepass.png',
+              height: 25.h,
+            ),
+            title: Text(
+              'Change Password',
+              style: TextStyle(fontSize: 14.sp),
+            ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
@@ -258,8 +284,12 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             onTap: () {},
-            leading: Image.asset('assets/images/drawer/logout.png'),
-            title: const Text('Logout'),
+            leading:
+                Image.asset('assets/images/drawer/logout.png', height: 25.h),
+            title: Text(
+              'Logout',
+              style: TextStyle(fontSize: 14.sp),
+            ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Text(
