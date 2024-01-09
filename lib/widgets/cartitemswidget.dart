@@ -10,17 +10,33 @@ class CartitemsWidget extends StatefulWidget {
 }
 
 class _CartitemsWidgetState extends State<CartitemsWidget> {
-  int counter = 1;
-  void incrementCounter() {
+  List<int> counters = List.generate(8, (index) => 1);
+  List<int> pcounters = List.generate(8, (index) => 1);
+
+  void incrementCounter(int index) {
     setState(() {
-      counter++;
+      counters[index]++;
     });
   }
 
-  void decrementCounter() {
-    if (counter > 1) {
+  void decrementCounter(int index) {
+    if (counters[index] > 1) {
       setState(() {
-        counter--;
+        counters[index]--;
+      });
+    }
+  }
+
+  void pincrementCounter(int index) {
+    setState(() {
+      pcounters[index]++;
+    });
+  }
+
+  void pdecrementCounter(int index) {
+    if (pcounters[index] > 1) {
+      setState(() {
+        pcounters[index]--;
       });
     }
   }
@@ -122,17 +138,17 @@ class _CartitemsWidgetState extends State<CartitemsWidget> {
                             SizedBox(width: 20.w),
                             GestureDetector(
                               onTap: () {
-                                decrementCounter();
+                                decrementCounter(index);
                               },
                               child:
                                   SvgPicture.asset('assets/svg/home/minus.svg'),
                             ),
                             SizedBox(width: 20.w),
-                            Text('$counter'),
+                            Text('${counters[index]}'),
                             SizedBox(width: 20.w),
                             GestureDetector(
                               onTap: () {
-                                incrementCounter();
+                                incrementCounter(index);
                               },
                               child:
                                   SvgPicture.asset('assets/svg/home/plus.svg'),
@@ -169,17 +185,17 @@ class _CartitemsWidgetState extends State<CartitemsWidget> {
                             SizedBox(width: 20.w),
                             GestureDetector(
                               onTap: () {
-                                decrementCounter();
+                                pdecrementCounter(index);
                               },
                               child:
                                   SvgPicture.asset('assets/svg/home/minus.svg'),
                             ),
                             SizedBox(width: 20.w),
-                            Text('$counter'),
+                            Text('${pcounters[index]}'),
                             SizedBox(width: 20.w),
                             GestureDetector(
                               onTap: () {
-                                incrementCounter();
+                                pincrementCounter(index);
                               },
                               child:
                                   SvgPicture.asset('assets/svg/home/plus.svg'),

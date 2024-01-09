@@ -7,102 +7,118 @@ class ViewItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // Row(
-        //   children: [
-        //     Column(
-        //       crossAxisAlignment: CrossAxisAlignment.start,
-        //       children: [
-        //         SvgPicture.asset('assets/svg/orders/completed.svg'),
-        //         // Padding(
-        //         //   padding: const EdgeInsets.only(left: 12),
-        //         //   child: Container(
-        //         //     height: 60,
-        //         //     width: 1,
-        //         //     color: Colors.grey,
-        //         //   ),
-        //         // ),
-        //         // SvgPicture.asset('assets/svg/orders/completed.svg'),
-        //         // Padding(
-        //         //   padding: const EdgeInsets.only(left: 12),
-        //         //   child: Container(
-        //         //     height: 60,
-        //         //     width: 1,
-        //         //     color: Colors.grey,
-        //         //   ),
-        //         // ),
-        //         // SvgPicture.asset('assets/svg/orders/pending.svg'),
-        //         // Padding(
-        //         //   padding: const EdgeInsets.only(left: 12),
-        //         //   child: Container(
-        //         //     height: 60,
-        //         //     width: 1,
-        //         //     color: Colors.grey,
-        //         //   ),
-        //         // ),
-        //       ],
-        //     ),
-        //     // Column(
-        //     //   children: [
-        //     //     Text(
-        //     //       'Orderplaced',
-        //     //       style: TextStyle(fontSize: 10.sp),
-        //     //     ),
-        //     //     SizedBox(height: 5.h),
-        //     //     Row(
-        //     //       children: [
-        //     //         SvgPicture.asset('assets/svg/orders/time.svg'),
-        //     //         Text(
-        //     //           ' 12.30 | 16 Aug 2021',
-        //     //           style: TextStyle(fontSize: 12.sp, color: Colors.grey),
-        //     //         )
-        //     //       ],
-        //     //     ),
-        //     //     const Divider(),
-        //     //     Text(
-        //     //       'Processing',
-        //     //       style: TextStyle(fontSize: 10.sp),
-        //     //     ),
-        //     //     SizedBox(height: 5.h),
-        //     //     Row(
-        //     //       children: [
-        //     //         SvgPicture.asset('assets/svg/orders/time.svg'),
-        //     //         Text(
-        //     //           ' 20 minutes ago',
-        //     //           style: TextStyle(fontSize: 12.sp, color: Colors.grey),
-        //     //         )
-        //     //       ],
-        //     //     ),
-        //     //   ],
-        //     // )
-        //     Expanded(
-        //       child: Column(
-        //         children: [
-        //           ListTile(
-        //             title: Text(
-        //               'Orderplaced',
-        //               style: TextStyle(fontSize: 12.sp),
-        //             ),
-        //           )
-        //         ],
-        //       ),
-        //     )
-        //   ],
-        // );
-        Row(
-      children: [
-        SvgPicture.asset('assets/svg/orders/completed.svg'),
-        ListTile(
-          title: Text(
-            'Orderplaced',
-            style: TextStyle(fontSize: 12.sp),
+    return Padding(
+      padding: const EdgeInsets.only(left: 10),
+      child: Row(
+        children: [
+          Container(
+            //color: Colors.red,
+            height: 450,
+            child: Column(
+              children: [
+                SvgPicture.asset('assets/svg/orders/completed.svg'),
+                Container(
+                  height: 55,
+                  width: 1,
+                  color: Colors.grey,
+                ),
+                SvgPicture.asset('assets/svg/orders/completed.svg'),
+                Container(
+                  height: 55,
+                  width: 1,
+                  color: Colors.grey,
+                ),
+                SvgPicture.asset('assets/svg/orders/pending.svg'),
+                Container(
+                  height: 55,
+                  width: 1,
+                  color: Colors.grey,
+                ),
+                SvgPicture.asset('assets/svg/orders/pending.svg'),
+                Container(
+                  height: 55,
+                  width: 1,
+                  color: Colors.grey,
+                ),
+                SvgPicture.asset('assets/svg/orders/pending.svg'),
+                Container(
+                  height: 55,
+                  width: 1,
+                  color: Colors.grey,
+                ),
+                SvgPicture.asset('assets/svg/orders/pending.svg'),
+              ],
+            ),
           ),
-          subtitle: Text(
-            ' 12.30 | 16 Aug 2021',
-            //style: TextStyle(fontSize: 12.sp, color: Colors.grey),
+          SizedBox(width: 22.w),
+          Container(
+            //color: Colors.yellow,
+            height: 450,
+            width: 310,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text('Order Placed'),
+                SizedBox(height: 8.h),
+                Row(
+                  children: [
+                    SvgPicture.asset(
+                      'assets/svg/orders/time.svg',
+                      width: 12.w,
+                      color: Colors.grey,
+                    ),
+                    const Text(
+                      '  12.30 | 16 Aug 2021',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 8.h),
+                Divider(),
+                SizedBox(height: 8.h),
+                Text('Processing'),
+                SizedBox(height: 8.h),
+                Row(
+                  children: [
+                    SvgPicture.asset(
+                      'assets/svg/orders/time.svg',
+                      width: 12.w,
+                      color: Colors.grey,
+                    ),
+                    const Text(
+                      '  20 minutes ago',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 8.h),
+                Divider(),
+                SizedBox(height: 8.h),
+                Text('Being prepared'),
+                SizedBox(height: 8.h),
+                Text(''),
+                SizedBox(height: 8.h),
+                Divider(),
+                SizedBox(height: 8.h),
+                Text('Dispatched. In transit'),
+                SizedBox(height: 8.h),
+                Text(''),
+                SizedBox(height: 8.h),
+                Divider(),
+                SizedBox(height: 8.h),
+                Text('Arrived at location'),
+                SizedBox(height: 8.h),
+                Text(''),
+                SizedBox(height: 8.h),
+                Divider(),
+                SizedBox(height: 8.h),
+                Text('Delivered'),
+              ],
+            ),
           ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }

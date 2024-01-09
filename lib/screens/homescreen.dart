@@ -22,8 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFf6f6f6),
-        surfaceTintColor: const Color(0xFFf6f6f6),
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.grey.withOpacity(0.3),
         toolbarHeight: 48.h,
         leading: Padding(
           padding: EdgeInsets.only(
@@ -71,6 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 10.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -104,39 +106,40 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(width: 10.w),
                   Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(
-                          20.0), // Adjust the radius as needed
-                      child: Container(
-                        height: 34.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white, // Set the background color
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              blurRadius: 2,
-                              offset: const Offset(-2, 3),
-                              blurStyle: BlurStyle.outer,
-                              spreadRadius: 0.7,
-                            )
-                          ],
-                        ),
-                        child: TextField(
-                          decoration: InputDecoration(
-                              //hintText: 'Search',
-                              prefixIcon: Padding(
-                                padding: EdgeInsets.symmetric(vertical: 11.h),
-                                child: SvgPicture.asset(
-                                  'assets/svg/home/search.svg',
-                                ),
+                    child: Container(
+                      height: 34.h,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20.0),
+                        border: Border.all(
+                            color: Colors.grey
+                                .withOpacity(0.3)), // Set the background color
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.3),
+                            blurRadius: 2,
+                            offset: const Offset(0, 2),
+                            blurStyle: BlurStyle.normal,
+                            spreadRadius: 0.7,
+                          )
+                        ],
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+
+                            //hintText: 'Search',
+                            prefixIcon: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 11.h),
+                              child: SvgPicture.asset(
+                                'assets/svg/home/search.svg',
                               ),
-                              border: InputBorder.none,
-                              suffixIcon: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: SvgPicture.asset(
-                                    'assets/svg/home/clear.svg'),
-                              )),
-                        ),
+                            ),
+                            border: InputBorder.none,
+                            suffixIcon: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child:
+                                  SvgPicture.asset('assets/svg/home/clear.svg'),
+                            )),
                       ),
                     ),
                   ),

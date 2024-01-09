@@ -19,8 +19,9 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color(0xFFf6f6f6),
-          surfaceTintColor: const Color(0xFFf6f6f6),
+          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.white,
+          shadowColor: Colors.grey.withOpacity(0.3),
           toolbarHeight: 48.h,
           leading: Padding(
               padding: EdgeInsets.only(
@@ -87,7 +88,7 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
             ),
             const Expanded(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.only(left: 20, right: 20, top: 2),
                 child: InvoiceListWidget(),
               ),
             )

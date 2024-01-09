@@ -74,6 +74,7 @@ flutter:
     - assets/svg/drawer/
     - assets/svg/categories/
     - assets/svg/search_result/
+    - assets/svg/support/
     - assets/home/
     - assets/images/categories/
     - assets/images/drawer/

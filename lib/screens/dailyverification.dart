@@ -81,14 +81,21 @@ class DailyVerfScreen extends StatelessWidget {
                         inactiveFillColor: Colors.white,
                         activeFillColor: Colors.white,
                         selectedFillColor: Colors.white,
-                        selectedColor: Colors.transparent,
-                        inactiveColor: Colors.transparent,
+                        selectedColor: Colors.grey.withOpacity(0.1),
+                        inactiveColor: Colors.grey.withOpacity(0.1),
                         fieldHeight: 38,
                         fieldWidth: 38,
                       ),
                       enableActiveFill: true,
                       keyboardType: TextInputType.number,
                       animationDuration: const Duration(milliseconds: 300),
+                      boxShadows: const [
+                        BoxShadow(
+                          offset: Offset(0, 1),
+                          color: Colors.black12,
+                          blurRadius: 10,
+                        )
+                      ],
                     ),
                     SizedBox(height: 20.h),
                     MaterialButton(

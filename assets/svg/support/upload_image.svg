@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="74" height="74" viewBox="0 0 74 74">
+  <defs>
+    <filter id="Rectangle_228" x="0" y="0" width="74" height="74" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="upload_image" transform="translate(9.075 6.075)">
+    <g id="add" transform="translate(11.231 11.54)" opacity="0.71">
+      <path id="Path_392" data-name="Path 392" d="M29.4,128.753H2.023A2.023,2.023,0,0,1,0,126.73V105.64a2.023,2.023,0,0,1,2.023-2.023h29.4V126.73A2.023,2.023,0,0,1,29.4,128.753Z" transform="translate(0 -100.044)" fill="#d1d1d1"/>
+      <rect id="Rectangle_230" data-name="Rectangle 230" width="26.985" height="20.515" transform="translate(2.218 5.977)" fill="#f4f4f4"/>
+      <path id="Path_393" data-name="Path 393" d="M149.769,217.507l-.125-.3a1.2,1.2,0,0,0-1.105-.737h-4.466a1.2,1.2,0,0,0-1.105.737l-.125.3a1.2,1.2,0,0,1-1.105.737h0a1.2,1.2,0,0,0-1.2,1.2v5.441a1.2,1.2,0,0,0,1.2,1.2h9.138a1.2,1.2,0,0,0,1.2-1.2v-5.441a1.2,1.2,0,0,0-1.2-1.2h0A1.2,1.2,0,0,1,149.769,217.507Z" transform="translate(-130.595 -204.912)" fill="#53bce9"/>
+      <circle id="Ellipse_4" data-name="Ellipse 4" cx="2.304" cy="2.304" r="2.304" transform="translate(13.406 14.429)" fill="#435054"/>
+      <circle id="Ellipse_5" data-name="Ellipse 5" cx="6.321" cy="6.321" r="6.321" transform="translate(23.584 0)" fill="#47c97f"/>
+      <g id="Group_499" data-name="Group 499" transform="translate(26.024 2.44)">
+        <path id="Path_394" data-name="Path 394" d="M415.383,95.364a.555.555,0,0,1-.554-.555V88.156a.555.555,0,1,1,1.109,0v6.654A.555.555,0,0,1,415.383,95.364Z" transform="translate(-411.501 -87.601)" fill="#fff"/>
+        <path id="Path_395" data-name="Path 395" d="M375.018,135.727h-6.654a.555.555,0,0,1,0-1.109h6.654a.555.555,0,0,1,0,1.109Z" transform="translate(-367.81 -131.291)" fill="#fff"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9.07, -6.07)" filter="url(#Rectangle_228)">
+      <g id="Rectangle_228-2" data-name="Rectangle 228" transform="translate(9 6)" fill="none" stroke="#707070" stroke-width="1" stroke-dasharray="2 4" opacity="0.71">
+        <rect width="56" height="56" rx="14" stroke="none"/>
+        <rect x="0.5" y="0.5" width="55" height="55" rx="13.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

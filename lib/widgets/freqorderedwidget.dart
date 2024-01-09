@@ -43,7 +43,18 @@ class _FrequentlyOrderedState extends State<FrequentlyOrdered> {
         width: 185.w,
         //color: Colors.red,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10), color: Colors.white),
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              blurRadius: 2,
+              offset: const Offset(0, 2),
+              blurStyle: BlurStyle.normal,
+              spreadRadius: 0.7,
+            )
+          ],
+        ),
         child: Padding(
           padding: EdgeInsets.only(left: 10.w, top: 10.h),
           child: Column(

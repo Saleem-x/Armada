@@ -20,8 +20,8 @@ class _OrderDetailsState extends State<OrderDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFf6f6f6),
-        surfaceTintColor: const Color(0xFFf6f6f6),
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -209,7 +209,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                 child: OrdereddetailsItemsWidget(),
               ),
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 25.h),
             Visibility(
               visible: isClicked,
               child: const Padding(

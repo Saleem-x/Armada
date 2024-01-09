@@ -9,8 +9,9 @@ class CheckoutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFf6f6f6),
-        surfaceTintColor: const Color(0xFFf6f6f6),
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.grey.withOpacity(0.3),
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -205,12 +206,7 @@ class CheckoutScreen extends StatelessWidget {
                       ],
                     ),
                     MaterialButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const CheckoutScreen()));
-                      },
+                      onPressed: () {},
                       color: const Color.fromARGB(244, 219, 32, 39),
                       height: 40.h,
                       minWidth: 100.w,
@@ -219,7 +215,7 @@ class CheckoutScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            'Select Free Good',
+                            'Proceed to Checkout',
                             style: TextStyle(
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w400,

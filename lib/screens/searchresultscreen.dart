@@ -10,18 +10,34 @@ class SearchResult extends StatefulWidget {
 }
 
 class _SearchResultState extends State<SearchResult> {
-  int counter = 1;
+  //int counter = 1;
+  List<int> counters = List.generate(8, (index) => 1);
+  List<int> pcounters = List.generate(8, (index) => 1);
 
-  void incrementCounter() {
+  void incrementCounter(int index) {
     setState(() {
-      counter++;
+      counters[index]++;
     });
   }
 
-  void decrementCounter() {
-    if (counter > 1) {
+  void decrementCounter(int index) {
+    if (counters[index] > 1) {
       setState(() {
-        counter--;
+        counters[index]--;
+      });
+    }
+  }
+
+  void pincrementCounter(int index) {
+    setState(() {
+      pcounters[index]++;
+    });
+  }
+
+  void pdecrementCounter(int index) {
+    if (pcounters[index] > 1) {
+      setState(() {
+        pcounters[index]--;
       });
     }
   }
@@ -30,8 +46,9 @@ class _SearchResultState extends State<SearchResult> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFf6f6f6),
-        surfaceTintColor: const Color(0xFFf6f6f6),
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.grey.withOpacity(0.3),
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -54,26 +71,31 @@ class _SearchResultState extends State<SearchResult> {
         ),
       ),
       body: SafeArea(
-          child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(width: 20.w),
-              Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(
-                      20.0), // Adjust the radius as needed
+          child: Container(
+        height: double.infinity,
+        //width: double.infinity,
+        child: Column(
+          children: [
+            SizedBox(height: 10.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(width: 20.w),
+                Expanded(
                   child: Container(
                     height: 34.h,
                     decoration: BoxDecoration(
-                      color: Colors.white, // Set the background color
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.0),
+                      border: Border.all(
+                          color: Colors.grey
+                              .withOpacity(0.3)), // Set the background color
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
                           blurRadius: 2,
-                          offset: const Offset(-2, 3),
-                          blurStyle: BlurStyle.outer,
+                          offset: const Offset(0, 2),
+                          blurStyle: BlurStyle.normal,
                           spreadRadius: 0.7,
                         )
                       ],
@@ -98,155 +120,168 @@ class _SearchResultState extends State<SearchResult> {
                     ),
                   ),
                 ),
-              ),
-              SizedBox(width: 10.w),
-              MaterialButton(
-                onPressed: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                height: 34.h,
-                minWidth: 10.w,
-                color: Colors.white,
-                child: SvgPicture.asset(
-                  'assets/svg/search_result/filter.svg',
+                SizedBox(width: 10.w),
+                MaterialButton(
+                  onPressed: () {},
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  height: 34.h,
+                  minWidth: 10.w,
+                  color: Colors.white,
+                  child: SvgPicture.asset(
+                    'assets/svg/search_result/filter.svg',
+                  ),
                 ),
-              ),
-              SizedBox(width: 20.w),
-            ],
-          ),
-          SizedBox(height: 10.h),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: GridView.builder(
-                itemCount: 8,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: .8,
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 10),
-                itemBuilder: (context, index) => Container(
-                  height: 230.h,
-                  width: 185.w,
-                  //color: Colors.red,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 10.w, top: 10.h),
-                    child: Column(
-                      //crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          'assets/images/categories/NoPath - Copy (10).png',
-                          height: 100.h,
-                          width: 75.w,
-                        ),
-                        SizedBox(height: 4.h),
-                        Text(
-                          'Rainbow Milk Cream',
-                          style: TextStyle(fontSize: 12.sp),
-                        ),
-                        SizedBox(height: 10.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              //crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Cs',
-                                      style: TextStyle(fontSize: 10.sp),
-                                    ),
-                                    SizedBox(width: 15.w),
-                                    Icon(Icons.keyboard_arrow_down,
-                                        color: Colors.grey, size: 12.sp),
-                                  ],
-                                ),
-                                SizedBox(height: 3.h),
-                                Text(
-                                  'AED 30.00',
-                                  style: TextStyle(
-                                      fontSize: 8.sp, color: Colors.red),
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 4.w),
-                            GestureDetector(
-                              onTap: () {
-                                decrementCounter();
-                              },
-                              child:
-                                  SvgPicture.asset('assets/svg/home/minus.svg'),
-                            ),
-                            Text('$counter'),
-                            GestureDetector(
-                              onTap: () {
-                                incrementCounter();
-                              },
-                              child:
-                                  SvgPicture.asset('assets/svg/home/plus.svg'),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 12.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              //crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Pc',
-                                      style: TextStyle(fontSize: 10.sp),
-                                    ),
-                                    SizedBox(width: 15.w),
-                                    Icon(Icons.keyboard_arrow_down,
-                                        color: Colors.grey, size: 12.sp),
-                                  ],
-                                ),
-                                SizedBox(height: 3.h),
-                                Text(
-                                  'AED 30.00',
-                                  style: TextStyle(
-                                      fontSize: 8.sp, color: Colors.red),
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 4.w),
-                            GestureDetector(
-                              onTap: () {
-                                decrementCounter();
-                              },
-                              child:
-                                  SvgPicture.asset('assets/svg/home/minus.svg'),
-                            ),
-                            Text('$counter'),
-                            GestureDetector(
-                              onTap: () {
-                                incrementCounter();
-                              },
-                              child:
-                                  SvgPicture.asset('assets/svg/home/plus.svg'),
-                            ),
-                          ],
+                SizedBox(width: 20.w),
+              ],
+            ),
+            SizedBox(height: 10.h),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                child: GridView.builder(
+                  itemCount: 8,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: .8,
+                      crossAxisSpacing: 5,
+                      mainAxisSpacing: 10),
+                  itemBuilder: (context, index) => Container(
+                    height: 230.h,
+                    width: 185.w,
+                    //color: Colors.red,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                          color: Colors.grey
+                              .withOpacity(0.3)), // Set the background color
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          blurRadius: 2,
+                          offset: const Offset(0, 2),
+                          blurStyle: BlurStyle.normal,
+                          spreadRadius: 0.7,
                         )
                       ],
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10.w, top: 10.h),
+                      child: Column(
+                        //crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/categories/NoPath - Copy (10).png',
+                            height: 100.h,
+                            width: 75.w,
+                          ),
+                          SizedBox(height: 4.h),
+                          Text(
+                            'Rainbow Milk Cream',
+                            style: TextStyle(fontSize: 12.sp),
+                          ),
+                          SizedBox(height: 10.h),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Column(
+                                //crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Cs',
+                                        style: TextStyle(fontSize: 10.sp),
+                                      ),
+                                      SizedBox(width: 15.w),
+                                      Icon(Icons.keyboard_arrow_down,
+                                          color: Colors.grey, size: 12.sp),
+                                    ],
+                                  ),
+                                  SizedBox(height: 3.h),
+                                  Text(
+                                    'AED 30.00',
+                                    style: TextStyle(
+                                        fontSize: 8.sp, color: Colors.red),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(width: 4.w),
+                              GestureDetector(
+                                onTap: () {
+                                  decrementCounter(index);
+                                },
+                                child: SvgPicture.asset(
+                                    'assets/svg/home/minus.svg'),
+                              ),
+                              Text('${counters[index]}'),
+                              GestureDetector(
+                                onTap: () {
+                                  incrementCounter(index);
+                                },
+                                child: SvgPicture.asset(
+                                    'assets/svg/home/plus.svg'),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 12.h),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Column(
+                                //crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Pc',
+                                        style: TextStyle(fontSize: 10.sp),
+                                      ),
+                                      SizedBox(width: 15.w),
+                                      Icon(Icons.keyboard_arrow_down,
+                                          color: Colors.grey, size: 12.sp),
+                                    ],
+                                  ),
+                                  SizedBox(height: 3.h),
+                                  Text(
+                                    'AED 30.00',
+                                    style: TextStyle(
+                                        fontSize: 8.sp, color: Colors.red),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(width: 4.w),
+                              GestureDetector(
+                                onTap: () {
+                                  pdecrementCounter(index);
+                                },
+                                child: SvgPicture.asset(
+                                    'assets/svg/home/minus.svg'),
+                              ),
+                              Text('${pcounters[index]}'),
+                              GestureDetector(
+                                onTap: () {
+                                  pincrementCounter(index);
+                                },
+                                child: SvgPicture.asset(
+                                    'assets/svg/home/plus.svg'),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       )),
     );
   }

@@ -19,8 +19,9 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFf6f6f6),
-        surfaceTintColor: const Color(0xFFf6f6f6),
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.grey.withOpacity(0.3),
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(

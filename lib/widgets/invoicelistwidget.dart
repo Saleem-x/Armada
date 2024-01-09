@@ -27,9 +27,18 @@ class _InvoiceListWidgetState extends State<InvoiceListWidget> {
                 height: 60.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.transparent, // Set the background color
-                  border: Border.all(color: Colors.grey.withOpacity(0.4)),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(15.0),
+                  border: Border.all(color: Colors.grey.withOpacity(0.3)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.3),
+                      blurRadius: 1,
+                      offset: const Offset(0, 0),
+                      blurStyle: BlurStyle.normal,
+                      spreadRadius: 0.2,
+                    )
+                  ],
                 ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12.w),

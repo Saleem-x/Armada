@@ -7,8 +7,15 @@ import 'package:armada/screens/verifyaccount.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +63,7 @@ class LoginScreen extends StatelessWidget {
                           SizedBox(width: 20.w),
                           Expanded(
                               child: TextFormField(
+                            controller: emailController,
                             decoration: InputDecoration(
                               hintText: 'Email or Userame',
                               hintStyle: TextStyle(
