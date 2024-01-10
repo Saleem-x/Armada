@@ -93,10 +93,10 @@ class _SearchResultState extends State<SearchResult> {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
-                          blurRadius: 2,
-                          offset: const Offset(0, 2),
+                          blurRadius: 1,
+                          offset: const Offset(0, 0),
                           blurStyle: BlurStyle.normal,
-                          spreadRadius: 0.7,
+                          spreadRadius: 0.2,
                         )
                       ],
                     ),
@@ -104,7 +104,7 @@ class _SearchResultState extends State<SearchResult> {
                       decoration: InputDecoration(
                           hintText: 'Milk',
                           contentPadding:
-                              const EdgeInsets.symmetric(vertical: -3),
+                              const EdgeInsets.symmetric(vertical: -6),
                           prefixIcon: Padding(
                             padding: EdgeInsets.symmetric(vertical: 11.h),
                             child: SvgPicture.asset(
@@ -159,10 +159,10 @@ class _SearchResultState extends State<SearchResult> {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
-                          blurRadius: 2,
-                          offset: const Offset(0, 2),
+                          blurRadius: 1,
+                          offset: const Offset(0, 0),
                           blurStyle: BlurStyle.normal,
-                          spreadRadius: 0.7,
+                          spreadRadius: 0.2,
                         )
                       ],
                     ),

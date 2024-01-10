@@ -1,3 +1,4 @@
+import 'package:armada/widgets/freqorddropdwnwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -48,10 +49,10 @@ class _FrequentlyOrderedState extends State<FrequentlyOrdered> {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.3),
-              blurRadius: 2,
-              offset: const Offset(0, 2),
+              blurRadius: 1,
+              offset: const Offset(0, 0),
               blurStyle: BlurStyle.normal,
-              spreadRadius: 0.7,
+              spreadRadius: 0.2,
             )
           ],
         ),
@@ -75,27 +76,9 @@ class _FrequentlyOrderedState extends State<FrequentlyOrdered> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Column(
-                    //crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Cs',
-                            style: TextStyle(fontSize: 10.sp),
-                          ),
-                          SizedBox(width: 15.w),
-                          GestureDetector(
-                            onTap: () {},
-                            child: Icon(
-                              Icons.keyboard_arrow_down,
-                              color: Colors.grey,
-                              size: 12.sp,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 3.h),
+                      const FreqDrpDownWidget(),
                       Text(
                         'AED 30.00',
                         style: TextStyle(fontSize: 8.sp, color: Colors.red),

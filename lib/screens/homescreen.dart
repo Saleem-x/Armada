@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
+        //elevation: 1,
         toolbarHeight: 48.h,
         leading: Padding(
           padding: EdgeInsets.only(
@@ -117,10 +118,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.3),
-                            blurRadius: 2,
-                            offset: const Offset(0, 2),
+                            blurRadius: 1,
+                            offset: const Offset(0, 0),
                             blurStyle: BlurStyle.normal,
-                            spreadRadius: 0.7,
+                            spreadRadius: 0.2,
                           )
                         ],
                       ),

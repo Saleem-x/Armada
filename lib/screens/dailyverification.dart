@@ -10,6 +10,7 @@ class DailyVerfScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
           child: Container(
         height: double.infinity,
@@ -77,24 +78,25 @@ class DailyVerfScreen extends StatelessWidget {
                         shape: PinCodeFieldShape.box,
                         borderRadius: BorderRadius.circular(4),
                         disabledColor: Colors.white,
-                        activeColor: Colors.white,
+                        activeColor: Colors.grey.withOpacity(0.4),
                         inactiveFillColor: Colors.white,
                         activeFillColor: Colors.white,
                         selectedFillColor: Colors.white,
-                        selectedColor: Colors.grey.withOpacity(0.1),
-                        inactiveColor: Colors.grey.withOpacity(0.1),
+                        selectedColor: Colors.grey.withOpacity(0.4),
+                        inactiveColor: Colors.grey.withOpacity(0.4),
                         fieldHeight: 38,
                         fieldWidth: 38,
                       ),
                       enableActiveFill: true,
                       keyboardType: TextInputType.number,
                       animationDuration: const Duration(milliseconds: 300),
-                      boxShadows: const [
+                      boxShadows: [
                         BoxShadow(
-                          offset: Offset(0, 1),
-                          color: Colors.black12,
-                          blurRadius: 10,
-                        )
+                            offset: Offset(0, 0),
+                            color: Colors.grey.withOpacity(0.4),
+                            blurRadius: 1,
+                            spreadRadius: 0.7,
+                            blurStyle: BlurStyle.normal)
                       ],
                     ),
                     SizedBox(height: 20.h),

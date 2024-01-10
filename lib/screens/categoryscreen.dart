@@ -82,10 +82,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.3),
-                        blurRadius: 2,
-                        offset: const Offset(0, 2),
+                        blurRadius: 1,
+                        offset: const Offset(0, 0),
                         blurStyle: BlurStyle.normal,
-                        spreadRadius: 0.7,
+                        spreadRadius: 0.2,
                       )
                     ],
                   ),
@@ -136,6 +136,15 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                       ? Border.all(color: Colors.transparent)
                                       : Border.all(
                                           color: Colors.grey.withOpacity(0.3)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.3),
+                                      blurRadius: 1,
+                                      offset: const Offset(0, 0),
+                                      blurStyle: BlurStyle.normal,
+                                      spreadRadius: 0.2,
+                                    )
+                                  ],
                                   borderRadius: BorderRadius.circular(10)),
                               child: Column(
                                 children: [

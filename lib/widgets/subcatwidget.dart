@@ -34,7 +34,7 @@ class SubcatWidgetState extends State<SubcatWidget> {
         Container(
           height: 100,
           child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 4,
               crossAxisSpacing: 8.0,
               mainAxisSpacing: 8.0,
