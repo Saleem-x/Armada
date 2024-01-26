@@ -22,6 +22,7 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
           backgroundColor: Colors.white,
           surfaceTintColor: Colors.white,
           shadowColor: Colors.grey.withOpacity(0.3),
+          elevation: 0.5,
           toolbarHeight: 48.h,
           leading: Padding(
               padding: EdgeInsets.only(
@@ -40,7 +41,7 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
               )),
           title: Text(
             'Invoices',
-            style: TextStyle(fontSize: 17.sp),
+            style: TextStyle(fontSize: 19.sp),
           ),
           actions: [
             Padding(
@@ -64,7 +65,9 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
             child: Column(
           children: [
             const Padding(
-                padding: EdgeInsets.all(20.0), child: InvoiceCalendarWidget()),
+              padding: EdgeInsets.all(20.0),
+              child: InvoiceCalendarWidget(),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
@@ -87,9 +90,11 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
               ),
             ),
             const Expanded(
-              child: Padding(
-                padding: EdgeInsets.only(left: 20, right: 20, top: 2),
-                child: InvoiceListWidget(),
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 20, right: 20, top: 2),
+                  child: InvoiceListWidget(),
+                ),
               ),
             )
           ],

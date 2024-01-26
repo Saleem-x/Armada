@@ -12,7 +12,7 @@ class ArmadaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(411.4, 866.3),
+      //designSize: const Size(411.4, 866.3),
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(

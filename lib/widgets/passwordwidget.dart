@@ -18,7 +18,7 @@ class _PasswordFieldWithVisibilityToggleState
       decoration: InputDecoration(
         hintText: 'Password',
         hintStyle: TextStyle(
-          fontSize: 17.sp,
+          fontSize: 19.sp,
           fontWeight: FontWeight.w400,
           color: const Color.fromARGB(255, 124, 124, 124),
         ),

@@ -13,6 +13,8 @@ class _InvoiceListWidgetState extends State<InvoiceListWidget> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
@@ -29,7 +31,7 @@ class _InvoiceListWidgetState extends State<InvoiceListWidget> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(15.0),
-                  border: Border.all(color: Colors.grey.withOpacity(0.3)),
+                  // border: Border.all(color: Colors.grey.withOpacity(0.3)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.3),
@@ -52,13 +54,13 @@ class _InvoiceListWidgetState extends State<InvoiceListWidget> {
                           Text(
                             'INV1200022',
                             style: TextStyle(
-                                fontWeight: FontWeight.w400, fontSize: 14.sp),
+                                fontWeight: FontWeight.w400, fontSize: 16.sp),
                           ),
                           SizedBox(height: 2.h),
                           Text(
                             '16 Aug 2021',
                             style: TextStyle(
-                                fontWeight: FontWeight.w400, fontSize: 10.sp),
+                                fontWeight: FontWeight.w400, fontSize: 12.sp),
                           ),
                         ],
                       ),
@@ -70,14 +72,14 @@ class _InvoiceListWidgetState extends State<InvoiceListWidget> {
                           Text(
                             'Unpaid',
                             style: TextStyle(
-                                fontSize: 12.sp,
+                                fontSize: 14.sp,
                                 color: const Color.fromARGB(244, 219, 32, 39)),
                           ),
                           SizedBox(height: 2.h),
                           Text(
                             'AED 1025.00',
                             style: TextStyle(
-                              fontSize: 12.sp,
+                              fontSize: 14.sp,
                             ),
                           ),
                         ],
@@ -91,7 +93,7 @@ class _InvoiceListWidgetState extends State<InvoiceListWidget> {
           ),
         );
       },
-      itemCount: 12,
+      itemCount: 6,
     );
   }
 }

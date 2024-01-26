@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
-        //elevation: 1,
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
           padding: EdgeInsets.only(
@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    height: 34.h,
+                    height: 32.h,
                     color: const Color.fromARGB(244, 175, 25, 30),
                     child: Row(
                       children: [
@@ -99,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           '  Categories',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 12.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400),
                         )
                       ],
@@ -108,13 +108,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(width: 10.w),
                   Expanded(
                     child: Container(
-                      height: 34.h,
+                      height: 40.0,
                       decoration: BoxDecoration(
-                        color: Colors.white,
                         borderRadius: BorderRadius.circular(20.0),
-                        border: Border.all(
-                            color: Colors.grey
-                                .withOpacity(0.3)), // Set the background color
+                        color: Colors.white,
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.3),
@@ -122,25 +119,30 @@ class _HomeScreenState extends State<HomeScreen> {
                             offset: const Offset(0, 0),
                             blurStyle: BlurStyle.normal,
                             spreadRadius: 0.2,
-                          )
+                          ),
                         ],
                       ),
-                      child: TextField(
-                        decoration: InputDecoration(
-
-                            //hintText: 'Search',
-                            prefixIcon: Padding(
-                              padding: EdgeInsets.symmetric(vertical: 11.h),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 4),
                               child: SvgPicture.asset(
-                                'assets/svg/home/search.svg',
+                                  'assets/svg/home/search.svg'),
+                            ),
+                            SizedBox(width: 8.w),
+                            Expanded(
+                              child: TextFormField(
+                                decoration: const InputDecoration(
+                                  hintText: 'Search here',
+                                  border: InputBorder.none,
+                                ),
                               ),
                             ),
-                            border: InputBorder.none,
-                            suffixIcon: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child:
-                                  SvgPicture.asset('assets/svg/home/clear.svg'),
-                            )),
+                            SvgPicture.asset('assets/svg/home/clear.svg'),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -150,9 +152,10 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 15.h),
               SizedBox(
                 width: 410.w,
-                height: 230.h,
+                //height: 230.h,
                 child: const SlidingWidget(),
               ),
+              SizedBox(height: 5.h),
               Row(
                 children: [
                   SizedBox(width: 20.w),
@@ -160,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Featured Sub Categories',
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
+                        fontSize: 16.sp,
                         color: const Color.fromARGB(255, 100, 54, 26)),
                   ),
                 ],
@@ -179,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Featured Categories',
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
+                        fontSize: 16.sp,
                         color: const Color.fromARGB(255, 100, 54, 26)),
                   ),
                 ],
@@ -197,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Frequently Ordered',
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
+                        fontSize: 16.sp,
                         color: const Color.fromARGB(255, 100, 54, 26)),
                   ),
                 ],
@@ -215,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Hot Deals',
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
+                        fontSize: 16.sp,
                         color: const Color.fromARGB(255, 100, 54, 26)),
                   ),
                 ],

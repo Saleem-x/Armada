@@ -1,10 +1,10 @@
 import 'package:armada/screens/cartscreen.dart';
+import 'package:armada/widgets/invoicecalendarwidget.dart';
 import 'package:armada/widgets/orderlistwidget.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:intl/intl.dart';
 
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
@@ -34,6 +34,7 @@ class _OrderScreenState extends State<OrderScreen> {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -52,7 +53,7 @@ class _OrderScreenState extends State<OrderScreen> {
             )),
         title: Text(
           'Orders',
-          style: TextStyle(fontSize: 17.sp),
+          style: TextStyle(fontSize: 19.sp),
         ),
         actions: [
           Padding(
@@ -76,111 +77,9 @@ class _OrderScreenState extends State<OrderScreen> {
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  onTap: () async {
-                    final selectedDate = await showDatePicker(
-                      context: context,
-                      initialDate: DateTime.now(),
-                      firstDate: DateTime(2000),
-                      lastDate: DateTime(2101),
-                    );
-
-                    if (selectedDate != null && selectedDate != fromDate) {
-                      setState(() {
-                        fromDate = selectedDate;
-                        fromDateController.text =
-                            DateFormat('dd/MM/yyyy').format(selectedDate);
-                      });
-                    }
-                  },
-                  child: Container(
-                      height: 35.h,
-                      width: 150.w,
-                      decoration: BoxDecoration(
-                        color: Colors.transparent, // Set the background color
-                        border: Border.all(color: Colors.grey.withOpacity(0.4)),
-                        borderRadius: BorderRadius.circular(18.0),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset(
-                              'assets/svg/search_result/calendar.svg'),
-                          SizedBox(width: 10.w),
-                          Text(
-                            fromDateController.text,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12.sp,
-                              color: Colors.grey.withOpacity(0.9),
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
-                GestureDetector(
-                  onTap: () async {
-                    final selectedDate = await showDatePicker(
-                      context: context,
-                      initialDate: DateTime.now(),
-                      firstDate: DateTime(2000),
-                      lastDate: DateTime(2101),
-                    );
-
-                    if (selectedDate != null && selectedDate != toDate) {
-                      setState(() {
-                        toDate = selectedDate;
-                        toDateController.text =
-                            DateFormat('dd/MM/yyyy').format(selectedDate);
-                      });
-                    }
-                  },
-                  child: Container(
-                      height: 35.h,
-                      width: 150.w,
-                      decoration: BoxDecoration(
-                        color: Colors.transparent, // Set the background color
-                        border: Border.all(color: Colors.grey.withOpacity(0.4)),
-                        borderRadius: BorderRadius.circular(18.0),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset(
-                              'assets/svg/search_result/calendar.svg'),
-                          SizedBox(width: 10.w),
-                          Text(toDateController.text,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12.sp,
-                                color: Colors.grey.withOpacity(0.9),
-                              ))
-                        ],
-                      )),
-                ),
-                Container(
-                    height: 35.h,
-                    width: 50.w,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(
-                          244, 219, 32, 39), // Set the background color
-                      border: Border.all(color: Colors.grey.withOpacity(0.4)),
-                      borderRadius: BorderRadius.circular(17.0),
-                    ),
-                    child: Center(
-                      child: SvgPicture.asset(
-                        'assets/svg/categories/right.svg',
-                        height: 15.h,
-                        color: Colors.white,
-                      ),
-                    )),
-              ],
-            ),
+          const Padding(
+            padding: EdgeInsets.all(20),
+            child: InvoiceCalendarWidget(),
           ),
           Row(
             children: [

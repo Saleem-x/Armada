@@ -48,7 +48,7 @@ class _SubCategoryState extends State<SubCategory> {
                               Text(
                                 'Cleaning',
                                 style: TextStyle(
-                                    fontSize: 9.sp,
+                                    fontSize: 11.sp,
                                     fontWeight: FontWeight.w400),
                               )
                             ],

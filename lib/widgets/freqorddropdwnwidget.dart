@@ -12,7 +12,7 @@ class CustomDropdownMenuItem extends StatelessWidget {
       children: [
         Text(
           text,
-          style: TextStyle(fontSize: 10.sp),
+          style: TextStyle(fontSize: 12.sp),
         ),
         SizedBox(width: 4.w),
       ],

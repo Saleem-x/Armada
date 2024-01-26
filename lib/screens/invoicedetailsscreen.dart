@@ -19,6 +19,7 @@ class _InoiceDetailsScreenState extends State<InoiceDetailsScreen> {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -37,7 +38,7 @@ class _InoiceDetailsScreenState extends State<InoiceDetailsScreen> {
             )),
         title: Text(
           'Invoice Details',
-          style: TextStyle(fontSize: 17.sp),
+          style: TextStyle(fontSize: 19.sp),
         ),
         actions: [
           Padding(
@@ -84,17 +85,17 @@ class _InoiceDetailsScreenState extends State<InoiceDetailsScreen> {
                             children: [
                               Text(
                                 '16 Aug 2021',
-                                style: TextStyle(fontSize: 10.sp),
+                                style: TextStyle(fontSize: 12.sp),
                               ),
                               SizedBox(height: 3.h),
                               Text(
                                 'INV1200022',
-                                style: TextStyle(fontSize: 14.sp),
+                                style: TextStyle(fontSize: 16.sp),
                               ),
                               SizedBox(height: 8.h),
                               Text(
                                 'Payment Type : CR',
-                                style: TextStyle(fontSize: 8.sp),
+                                style: TextStyle(fontSize: 10.sp),
                               )
                             ],
                           ),
@@ -104,26 +105,26 @@ class _InoiceDetailsScreenState extends State<InoiceDetailsScreen> {
                               Text(
                                 'Paid',
                                 style: TextStyle(
-                                    fontSize: 10.sp, color: Colors.red),
+                                    fontSize: 12.sp, color: Colors.red),
                               ),
                               Text(
                                 'AED 1025.00',
-                                style: TextStyle(fontSize: 14.sp),
+                                style: TextStyle(fontSize: 16.sp),
                               ),
                               SizedBox(height: 3.h),
                               Text(
                                 'SubTotal : 1010.00',
-                                style: TextStyle(fontSize: 10.sp),
+                                style: TextStyle(fontSize: 12.sp),
                               ),
                               SizedBox(height: 3.h),
                               Text(
                                 'VAT : 15.00',
-                                style: TextStyle(fontSize: 10.sp),
+                                style: TextStyle(fontSize: 12.sp),
                               ),
                               SizedBox(height: 3.h),
                               Text(
                                 'Grand Total : 1010.00',
-                                style: TextStyle(fontSize: 10.sp),
+                                style: TextStyle(fontSize: 12.sp),
                               )
                             ],
                           )
@@ -141,7 +142,7 @@ class _InoiceDetailsScreenState extends State<InoiceDetailsScreen> {
               //child: OrdereddetailsItemsWidget(),
             ),
             SizedBox(height: 5.h),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: InvoicedetailsItemsWidget(),
             )

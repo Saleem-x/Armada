@@ -1,7 +1,9 @@
 import 'package:armada/widgets/drawerlist.dart';
+// import 'package:armada/widgets/drawerpopup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'drawerpopup.dart';
 
 class MyDrawer extends StatefulWidget {
   @override
@@ -18,29 +20,41 @@ class _MyDrawerState extends State<MyDrawer> {
         width: 345,
         child: ListView(padding: EdgeInsets.zero, children: [
           Container(
-            height: 345,
+            height: 348,
             child: DrawerHeader(
                 child: Column(
               children: [
-                Row(
-                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SvgPicture.asset('assets/svg/drawer/profile.svg'),
-                    SizedBox(width: 15.w),
-                    Text(
-                      'LA ZONA CAFE-CASH',
-                      style: TextStyle(
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w600,
-                          color: const Color.fromARGB(255, 100, 54, 26)),
+                GestureDetector(
+                  onTap: () {
+                    showMyDialog(context);
+                  },
+                  child: Container(
+                    width: 320.w, // Adjust the width as needed
+
+                    padding: EdgeInsets.zero,
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SvgPicture.asset('assets/svg/drawer/profile.svg'),
+                        SizedBox(width: 15.w),
+                        Expanded(
+                          child: Text(
+                            'LA ZONA CAFE-CASH',
+                            style: TextStyle(
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w600,
+                                color: const Color.fromARGB(255, 100, 54, 26)),
+                          ),
+                        ),
+                        //SizedBox(width: 40.w),
+                        GestureDetector(
+                            child: const Icon(Icons.close),
+                            onTap: () {
+                              Navigator.pop(context);
+                            })
+                      ],
                     ),
-                    SizedBox(width: 40.w),
-                    GestureDetector(
-                        child: const Icon(Icons.close),
-                        onTap: () {
-                          Navigator.pop(context);
-                        })
-                  ],
+                  ),
                 ),
                 SizedBox(height: 10.h),
                 Row(
@@ -87,12 +101,13 @@ class _MyDrawerState extends State<MyDrawer> {
                             color: Colors.grey))
                   ],
                 ),
-                SizedBox(height: 15.h),
+                SizedBox(height: 12.h),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      height: 52.h,
-                      width: 150.w,
+                      height: 48.h,
+                      width: 132.w,
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(
                             244, 219, 32, 39), // Set the background color
@@ -113,13 +128,25 @@ class _MyDrawerState extends State<MyDrawer> {
                         ],
                       ),
                     ),
-                    SizedBox(width: 5.w),
+                    //SizedBox(width: 5.w),
                     Container(
-                      height: 52.h,
-                      width: 150.w,
+                      height: 48.h,
+                      width: 132.w,
                       decoration: BoxDecoration(
-                        color: Colors.white, // Set the background color
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(15.0),
+                        // border: Border.all(
+                        //     color: Colors.grey.withOpacity(
+                        //         0.3)), // Set the background color
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.3),
+                            blurRadius: 1,
+                            offset: const Offset(0, 0),
+                            blurStyle: BlurStyle.normal,
+                            spreadRadius: 0.2,
+                          )
+                        ],
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -138,7 +165,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     ),
                   ],
                 ),
-                SizedBox(height: 15.h),
+                SizedBox(height: 12.h),
                 Row(
                   children: [
                     SvgPicture.asset('assets/svg/drawer/tollfree.svg'),

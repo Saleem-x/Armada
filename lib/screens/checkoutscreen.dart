@@ -1,3 +1,5 @@
+import 'package:armada/widgets/checkoutcalendar.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,10 +10,12 @@ class CheckoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -30,7 +34,7 @@ class CheckoutScreen extends StatelessWidget {
             )),
         title: Text(
           'Checkout',
-          style: TextStyle(fontSize: 17.sp),
+          style: TextStyle(fontSize: 19.sp),
         ),
       ),
       body: SafeArea(
@@ -62,13 +66,13 @@ class CheckoutScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SvgPicture.asset('assets/svg/search_result/timer.svg'),
-                        Text('  Order Cut off time : '),
+                        const Text('  Order Cut off time : '),
                         Text(
                           '10 AM',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               color: const Color.fromARGB(255, 100, 54, 26),
-                              fontSize: 15.sp),
+                              fontSize: 16.sp),
                         )
                       ],
                     )),
@@ -76,81 +80,77 @@ class CheckoutScreen extends StatelessWidget {
               SizedBox(height: 14.h),
               Text('Delivery Details',
                   style:
-                      TextStyle(fontWeight: FontWeight.w400, fontSize: 14.sp)),
+                      TextStyle(fontWeight: FontWeight.w400, fontSize: 16.sp)),
               SizedBox(height: 12.h),
               Text('Expected Delivery Date',
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
+                      fontSize: 14.sp,
                       color: Colors.grey)),
               SizedBox(height: 7.h),
-
-              // Adjust the radius as needed
-              Container(
-                  height: 34.h,
-                  width: 180.w,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent, // Set the background color
-                    border: Border.all(color: Colors.grey.withOpacity(0.4)),
-                    borderRadius: BorderRadius.circular(18.0),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset('assets/svg/search_result/calendar.svg'),
-                      SizedBox(width: 10.w),
-                      Text('12 Feb 2022',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 14.sp))
-                    ],
-                  )),
-
+              // Container(
+              //     height: 34.h,
+              //     width: 180.w,
+              //     decoration: BoxDecoration(
+              //       color: Colors.transparent, // Set the background color
+              //
+              //     ),
+              //     child: Row(
+              //       mainAxisAlignment: MainAxisAlignment.center,
+              //       children: [
+              //         SvgPicture.asset('assets/svg/search_result/calendar.svg'),
+              //         SizedBox(width: 10.w),
+              //         Text('12 Feb 2022',
+              //             style: TextStyle(
+              //                 fontWeight: FontWeight.w400, fontSize: 16.sp))
+              //       ],
+              //     )),
+              const CheckOutCalendarWidget(),
               SizedBox(height: 7.h),
               Row(
                 children: [
                   SvgPicture.asset('assets/svg/search_result/info.svg'),
                   SizedBox(width: 5.h),
                   Text(
-                      'Orders placed after 03.00 PM will be delivered within two business ',
+                      'Orders placed after 03.00 PM will be delivered \nwithin two business days, excluding holidays',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 10.sp,
+                          fontSize: 12.sp,
                           color: Colors.grey)),
                 ],
               ),
-              Text('      days, excluding holidays',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 10.sp,
-                      color: Colors.grey)),
               SizedBox(height: 17.h),
               Text('LPO Details',
                   style:
                       TextStyle(fontWeight: FontWeight.w400, fontSize: 14.sp)),
-              SizedBox(height: 12.h),
+              SizedBox(height: 14.h),
               Text('LPO Number',
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
+                      fontSize: 14.sp,
                       color: Colors.grey)),
               SizedBox(height: 7.h),
+
               Container(
-                  height: 42.h,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.grey)),
-                  child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
-                      child: Text('Divella Penne Pasta 500g',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 14.sp)))),
+                height: 42.h,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: Colors.grey,
+                    )),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: TextFormField(
+                    decoration: const InputDecoration(border: InputBorder.none),
+                    style: TextStyle(fontSize: 16.sp),
+                  ),
+                ),
+              ),
               SizedBox(height: 10.h),
               Text('LPO Attachment',
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
+                      fontSize: 14.sp,
                       color: Colors.grey)),
               SizedBox(height: 7.h),
               Container(
@@ -169,7 +169,7 @@ class CheckoutScreen extends StatelessWidget {
                           Text('Select file',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 14.sp)),
+                                  fontSize: 16.sp)),
                         ],
                       ))),
             ],
@@ -178,6 +178,7 @@ class CheckoutScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
         height: 85.h,
+        width: double.infinity,
         color: Colors.white.withOpacity(0.3),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -196,12 +197,12 @@ class CheckoutScreen extends StatelessWidget {
                         Text(
                           'Total Amount',
                           style: TextStyle(
-                              fontSize: 12.sp, fontWeight: FontWeight.w500),
+                              fontSize: 14.sp, fontWeight: FontWeight.w500),
                         ),
                         Text(
                           'AED 1365.00',
                           style: TextStyle(
-                              fontSize: 16.sp, fontWeight: FontWeight.w500),
+                              fontSize: 18.sp, fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
@@ -209,7 +210,7 @@ class CheckoutScreen extends StatelessWidget {
                       onPressed: () {},
                       color: const Color.fromARGB(244, 219, 32, 39),
                       height: 40.h,
-                      minWidth: 100.w,
+                      minWidth: 90.w,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
@@ -217,7 +218,7 @@ class CheckoutScreen extends StatelessWidget {
                           Text(
                             'Proceed to Checkout',
                             style: TextStyle(
-                                fontSize: 12.sp,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white),
                           ),
@@ -235,7 +236,7 @@ class CheckoutScreen extends StatelessWidget {
               Text(
                 'You have exceeded a credit of 30 days',
                 style: TextStyle(
-                    fontSize: 12.sp,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w500,
                     color: const Color.fromARGB(244, 219, 32, 39)),
               ),

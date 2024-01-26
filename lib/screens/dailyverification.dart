@@ -18,12 +18,12 @@ class DailyVerfScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 80.h),
+              SizedBox(height: 70.h),
               SvgPicture.asset('assets/svg/logo.svg'),
-              SizedBox(height: 35.h),
+              SizedBox(height: 32.h),
               Container(
                 width: double.infinity,
-                height: 200.h,
+                //height: 200.h,
                 child: SvgPicture.asset(
                   'assets/svg/login_art.svg',
                   fit: BoxFit.fill,
@@ -31,19 +31,19 @@ class DailyVerfScreen extends StatelessWidget {
               ),
               SizedBox(height: 24.h),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40.h),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Daily Verification',
                       style: TextStyle(
-                        fontSize: 20.sp,
+                        fontSize: 22.sp,
                         fontWeight: FontWeight.w800,
                         color: const Color(0xFF6f3d1e),
                       ),
                     ),
-                    SizedBox(height: 28.h),
+                    SizedBox(height: 20.h),
                     Text(
                       'An OTP has been sent to your account. You can use the same OTP for logging in both web and app for today',
                       style: TextStyle(
@@ -57,13 +57,13 @@ class DailyVerfScreen extends StatelessWidget {
                       children: [
                         Text('Enter OTP',
                             style: TextStyle(
-                              fontSize: 18.sp,
+                              fontSize: 20.sp,
                               fontWeight: FontWeight.w600,
                             )),
                         GestureDetector(
                             child: Text('Resend OTP',
                                 style: TextStyle(
-                                    fontSize: 14.sp,
+                                    fontSize: 16.sp,
                                     fontWeight: FontWeight.w500,
                                     color: const Color.fromARGB(
                                         244, 175, 25, 30)))),
@@ -108,14 +108,14 @@ class DailyVerfScreen extends StatelessWidget {
                                 builder: (context) => const HomeScreen()));
                       },
                       color: const Color.fromARGB(244, 202, 29, 35),
-                      height: 42.h,
+                      height: 35.h,
                       minWidth: 500.w,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       child: Text(
                         'Verify',
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w600,
                             color: Colors.white),
                       ),
@@ -127,14 +127,14 @@ class DailyVerfScreen extends StatelessWidget {
               GestureDetector(
                 child: Text('Back to login',
                     style: TextStyle(
-                        fontSize: 14.sp,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: const Color.fromARGB(244, 175, 25, 30))),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
-              SizedBox(height: 45.h),
+              SizedBox(height: 25.h),
               Text(
                 'Powered by',
                 style: TextStyle(fontSize: 6.sp, fontWeight: FontWeight.w600),

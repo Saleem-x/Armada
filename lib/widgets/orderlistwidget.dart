@@ -27,7 +27,7 @@ class _orderlistWidgetState extends State<orderlistWidget> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(15.0),
-                  border: Border.all(color: Colors.grey.withOpacity(0.3)),
+                  //border: Border.all(color: Colors.grey.withOpacity(0.3)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.3),
@@ -50,19 +50,19 @@ class _orderlistWidgetState extends State<orderlistWidget> {
                           Text(
                             'ORD#1200125551',
                             style: TextStyle(
-                                fontWeight: FontWeight.w400, fontSize: 14.sp),
+                                fontWeight: FontWeight.w400, fontSize: 16.sp),
                           ),
                           SizedBox(height: 2.h),
                           Text(
                             'Ordered on 16 Aug 2021',
                             style: TextStyle(
-                                fontWeight: FontWeight.w400, fontSize: 10.sp),
+                                fontWeight: FontWeight.w400, fontSize: 12.sp),
                           ),
                           SizedBox(height: 2.h),
                           Text(
                             'Expected delivery ob 18 Aug 2021 ',
                             style: TextStyle(
-                                fontWeight: FontWeight.w400, fontSize: 10.sp),
+                                fontWeight: FontWeight.w400, fontSize: 12.sp),
                           ),
                         ],
                       ),
@@ -74,21 +74,21 @@ class _orderlistWidgetState extends State<orderlistWidget> {
                           Text(
                             'Ordered',
                             style: TextStyle(
-                                fontSize: 12.sp,
+                                fontSize: 14.sp,
                                 color: const Color.fromARGB(244, 219, 32, 39)),
                           ),
                           SizedBox(height: 2.h),
                           Text(
                             'AED 1025.00',
                             style: TextStyle(
-                              fontSize: 12.sp,
+                              fontSize: 14.sp,
                             ),
                           ),
                           SizedBox(height: 2.h),
                           Text(
                             '16 Items',
                             style: TextStyle(
-                              fontSize: 10.sp,
+                              fontSize: 12.sp,
                             ),
                           ),
                         ],

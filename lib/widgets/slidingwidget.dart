@@ -52,7 +52,7 @@ class _SlidingWisgetState extends State<SlidingWidget> {
             ),
           ),
           onTap: () {
-            print('clicked');
+            //print('clicked');
           },
         ),
         Row(
@@ -61,7 +61,8 @@ class _SlidingWisgetState extends State<SlidingWidget> {
             return Container(
               width: 8.w,
               height: 4.h,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+              margin:
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: _currentIndex == index ? Colors.red : Colors.grey,

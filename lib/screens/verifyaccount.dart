@@ -20,7 +20,7 @@ class VerifyScreen extends StatelessWidget {
             SizedBox(height: 35.h),
             Container(
               width: double.infinity,
-              height: 184.h,
+              //height: 184.h,
               child: SvgPicture.asset(
                 'assets/svg/login_art.svg',
                 fit: BoxFit.fill,
@@ -28,14 +28,14 @@ class VerifyScreen extends StatelessWidget {
             ),
             SizedBox(height: 24.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.h),
+              padding: EdgeInsets.symmetric(horizontal: 20.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Verify your account',
                     style: TextStyle(
-                      fontSize: 20.sp,
+                      fontSize: 22.sp,
                       fontWeight: FontWeight.w800,
                       color: const Color(0xFF6f3d1e),
                     ),
@@ -45,7 +45,7 @@ class VerifyScreen extends StatelessWidget {
                     'Enter your email below to receive the verification URL',
                     style: TextStyle(
                         color: const Color.fromARGB(255, 105, 105, 105),
-                        fontSize: 16.sp,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w500),
                   ),
                   SizedBox(height: 20.h),
@@ -61,7 +61,7 @@ class VerifyScreen extends StatelessWidget {
                         decoration: InputDecoration(
                           hintText: 'Email',
                           hintStyle: TextStyle(
-                              fontSize: 17.sp,
+                              fontSize: 19.sp,
                               fontWeight: FontWeight.w500,
                               color: const Color.fromARGB(255, 124, 124, 124)),
                         ),
@@ -72,14 +72,14 @@ class VerifyScreen extends StatelessWidget {
                   MaterialButton(
                     onPressed: () {},
                     color: const Color.fromARGB(244, 219, 32, 39),
-                    height: 42.h,
+                    height: 35.h,
                     minWidth: 140.w,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                     child: Text(
                       'Verify',
                       style: TextStyle(
-                          fontSize: 17.sp,
+                          fontSize: 19.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.white),
                     ),

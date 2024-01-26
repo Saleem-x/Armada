@@ -22,6 +22,8 @@ class _OrderDetailsState extends State<OrderDetails> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
+        shadowColor: Colors.grey.withOpacity(0.3),
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -40,7 +42,7 @@ class _OrderDetailsState extends State<OrderDetails> {
             )),
         title: Text(
           'Order Details',
-          style: TextStyle(fontSize: 17.sp),
+          style: TextStyle(fontSize: 19.sp),
         ),
         actions: [
           Padding(
@@ -119,7 +121,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                               )
                             ],
                           ),
-                          Divider(),
+                          const Divider(),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -133,7 +135,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                           'assets/svg/orders/pdf.svg'),
                                       Text(' View PDF',
                                           style: TextStyle(
-                                            fontSize: 10.sp,
+                                            fontSize: 12.sp,
                                             color: const Color.fromARGB(
                                                 244, 219, 32, 39),
                                           )),
@@ -153,7 +155,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                                 ? 'View Items'
                                                 : 'Ordered',
                                             style: TextStyle(
-                                              fontSize: 10.sp,
+                                              fontSize: 12.sp,
                                               color: const Color.fromARGB(
                                                   244, 219, 32, 39),
                                             )),
@@ -174,19 +176,19 @@ class _OrderDetailsState extends State<OrderDetails> {
                                 children: [
                                   Text(
                                     'SubTotal : 1010.00',
-                                    style: TextStyle(fontSize: 10.sp),
+                                    style: TextStyle(fontSize: 12.sp),
                                   ),
                                   SizedBox(height: 3.h),
                                   Text(
                                     'VAT : 15.00',
-                                    style: TextStyle(fontSize: 10.sp),
+                                    style: TextStyle(fontSize: 12.sp),
                                   ),
                                   SizedBox(height: 3.h),
                                   Visibility(
                                     visible: !isClicked,
                                     child: Text(
                                       'Grand Total : 1010.00',
-                                      style: TextStyle(fontSize: 10),
+                                      style: TextStyle(fontSize: 12.h),
                                     ),
                                   )
                                 ],

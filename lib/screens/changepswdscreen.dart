@@ -13,6 +13,7 @@ class ChangePassword extends StatelessWidget {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -31,7 +32,7 @@ class ChangePassword extends StatelessWidget {
             )),
         title: Text(
           'Change Password',
-          style: TextStyle(fontSize: 17.sp),
+          style: TextStyle(fontSize: 19.sp),
         ),
       ),
       body: SafeArea(
@@ -46,7 +47,7 @@ class ChangePassword extends StatelessWidget {
               SizedBox(height: 10.h),
               Text(
                 'Username',
-                style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                style: TextStyle(color: Colors.grey, fontSize: 15.sp),
               ),
               SizedBox(height: 7.h),
               Container(
@@ -61,13 +62,14 @@ class ChangePassword extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: TextFormField(
-                      decoration: InputDecoration(border: InputBorder.none)),
+                      decoration:
+                          const InputDecoration(border: InputBorder.none)),
                 ),
               ),
               SizedBox(height: 12.h),
               Text(
                 'Current Password',
-                style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                style: TextStyle(color: Colors.grey, fontSize: 15.sp),
               ),
               SizedBox(height: 7.h),
               Container(
@@ -82,13 +84,14 @@ class ChangePassword extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: TextFormField(
-                      decoration: InputDecoration(border: InputBorder.none)),
+                      decoration:
+                          const InputDecoration(border: InputBorder.none)),
                 ),
               ),
               SizedBox(height: 12.h),
               Text(
                 'New Password',
-                style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                style: TextStyle(color: Colors.grey, fontSize: 15.sp),
               ),
               SizedBox(height: 7.h),
               Container(
@@ -103,13 +106,14 @@ class ChangePassword extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: TextFormField(
-                      decoration: InputDecoration(border: InputBorder.none)),
+                      decoration:
+                          const InputDecoration(border: InputBorder.none)),
                 ),
               ),
               SizedBox(height: 12.h),
               Text(
                 'Confirm Password',
-                style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                style: TextStyle(color: Colors.grey, fontSize: 15.sp),
               ),
               SizedBox(height: 7.h),
               Container(
@@ -122,12 +126,12 @@ class ChangePassword extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: TextFormField(
-                    decoration: InputDecoration(border: InputBorder.none),
+                    decoration: const InputDecoration(border: InputBorder.none),
                     style: TextStyle(fontSize: 12.sp),
                   ),
                 ),
               ),
-              SizedBox(height: 380.h),
+              SizedBox(height: 210.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -144,7 +148,7 @@ class ChangePassword extends StatelessWidget {
                         Text(
                           'Submit',
                           style: TextStyle(
-                              fontSize: 12.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                               color: Colors.white),
                         ),

@@ -12,6 +12,7 @@ class OutstandingInvoices extends StatelessWidget {
           backgroundColor: Colors.white,
           surfaceTintColor: Colors.white,
           shadowColor: Colors.grey.withOpacity(0.3),
+          elevation: 0.5,
           toolbarHeight: 48.h,
           leading: Padding(
               padding: EdgeInsets.only(
@@ -30,7 +31,7 @@ class OutstandingInvoices extends StatelessWidget {
               )),
           title: Text(
             'Outstanding Invoices',
-            style: TextStyle(fontSize: 17.sp),
+            style: TextStyle(fontSize: 19.sp),
           ),
         ),
         body: Padding(
@@ -45,7 +46,7 @@ class OutstandingInvoices extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15.0),
-                      border: Border.all(color: Colors.grey.withOpacity(0.3)),
+                      //border: Border.all(color: Colors.grey.withOpacity(0.3)),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -69,14 +70,14 @@ class OutstandingInvoices extends StatelessWidget {
                                 '5498627',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 14.sp),
+                                    fontSize: 16.sp),
                               ),
                               SizedBox(height: 2.h),
                               Text(
                                 '01-May-23',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 10.sp),
+                                    fontSize: 12.sp),
                               ),
                             ],
                           ),
@@ -88,7 +89,7 @@ class OutstandingInvoices extends StatelessWidget {
                               Text(
                                 '1367.10',
                                 style: TextStyle(
-                                    fontSize: 12.sp,
+                                    fontSize: 14.sp,
                                     color:
                                         const Color.fromARGB(244, 219, 32, 39)),
                               ),
@@ -96,7 +97,7 @@ class OutstandingInvoices extends StatelessWidget {
                               Text(
                                 'Inv Amt: 1367.10',
                                 style: TextStyle(
-                                    fontSize: 12.sp, color: Colors.grey),
+                                    fontSize: 14.sp, color: Colors.grey),
                               ),
                             ],
                           )

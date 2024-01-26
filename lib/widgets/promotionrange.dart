@@ -27,7 +27,7 @@ class _PromotionRangeState extends State<PromotionRange> {
                 itemBuilder: (context, index) {
                   return Container(
                     width: 178.w,
-                    height: 25.h,
+                    height: 30.h,
                     child: Card(
                       surfaceTintColor: Colors.white,
                       color: index == 0
@@ -36,13 +36,13 @@ class _PromotionRangeState extends State<PromotionRange> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: 20.h),
                               Text(
                                 'Get 3 Pc Free',
                                 style: TextStyle(
-                                    fontSize: 13.sp,
+                                    fontSize: 15.sp,
                                     color: index == 0
                                         ? Colors.white
                                         : const Color.fromARGB(
@@ -53,7 +53,7 @@ class _PromotionRangeState extends State<PromotionRange> {
                               Text(
                                 'With purchase of',
                                 style: TextStyle(
-                                    fontSize: 11.sp,
+                                    fontSize: 13.sp,
                                     color:
                                         index == 0 ? Colors.white : Colors.grey,
                                     fontWeight: FontWeight.w400),
@@ -62,7 +62,7 @@ class _PromotionRangeState extends State<PromotionRange> {
                               Text(
                                 '1-10 Pc',
                                 style: TextStyle(
-                                    fontSize: 11.sp,
+                                    fontSize: 13.sp,
                                     color: index == 0
                                         ? Colors.white
                                         : const Color.fromARGB(

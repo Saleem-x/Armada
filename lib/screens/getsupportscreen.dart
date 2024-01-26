@@ -14,6 +14,7 @@ class GetSupport extends StatelessWidget {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -32,7 +33,7 @@ class GetSupport extends StatelessWidget {
             )),
         title: Text(
           'Get Support',
-          style: TextStyle(fontSize: 17.sp),
+          style: TextStyle(fontSize: 19.sp),
         ),
         actions: [
           Padding(
@@ -64,7 +65,7 @@ class GetSupport extends StatelessWidget {
               SizedBox(height: 10.h),
               Text(
                 'Title',
-                style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                style: TextStyle(color: Colors.grey, fontSize: 15.sp),
               ),
               SizedBox(height: 7.h),
               Container(
@@ -78,13 +79,14 @@ class GetSupport extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: TextFormField(
-                      decoration: InputDecoration(border: InputBorder.none)),
+                      decoration:
+                          const InputDecoration(border: InputBorder.none)),
                 ),
               ),
               SizedBox(height: 12.h),
               Text(
                 'Reason',
-                style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                style: TextStyle(color: Colors.grey, fontSize: 15.sp),
               ),
               SizedBox(height: 7.h),
               Container(
@@ -97,13 +99,14 @@ class GetSupport extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: TextFormField(
-                      decoration: InputDecoration(border: InputBorder.none)),
+                      decoration:
+                          const InputDecoration(border: InputBorder.none)),
                 ),
               ),
               SizedBox(height: 12.h),
               Text(
                 'Comments',
-                style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                style: TextStyle(color: Colors.grey, fontSize: 15.sp),
               ),
               SizedBox(height: 7.h),
               Container(
@@ -116,13 +119,14 @@ class GetSupport extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: TextFormField(
-                      decoration: InputDecoration(border: InputBorder.none)),
+                      decoration:
+                          const InputDecoration(border: InputBorder.none)),
                 ),
               ),
               SizedBox(height: 12.h),
               Text(
                 'Images',
-                style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                style: TextStyle(color: Colors.grey, fontSize: 15.sp),
               ),
               SizedBox(height: 7.h),
               Container(
@@ -131,8 +135,6 @@ class GetSupport extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(6.0),
-
-                  // Set the background color
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.4),
@@ -150,7 +152,7 @@ class GetSupport extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 250.h),
+              SizedBox(height: 85.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -167,7 +169,7 @@ class GetSupport extends StatelessWidget {
                         Text(
                           'Submit',
                           style: TextStyle(
-                              fontSize: 12.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                               color: Colors.white),
                         ),

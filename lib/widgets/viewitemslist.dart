@@ -9,116 +9,188 @@ class ViewItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 10),
-      child: Row(
+      child: Column(
         children: [
           Container(
-            //color: Colors.red,
-            height: 450,
-            child: Column(
+            width: double.infinity,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SvgPicture.asset('assets/svg/orders/completed.svg'),
-                Container(
-                  height: 55,
-                  width: 1,
-                  color: Colors.grey,
+                Column(
+                  children: [
+                    SvgPicture.asset('assets/svg/orders/completed.svg'),
+                    const verticalLine(),
+                  ],
                 ),
-                SvgPicture.asset('assets/svg/orders/completed.svg'),
-                Container(
-                  height: 55,
-                  width: 1,
-                  color: Colors.grey,
-                ),
-                SvgPicture.asset('assets/svg/orders/pending.svg'),
-                Container(
-                  height: 55,
-                  width: 1,
-                  color: Colors.grey,
-                ),
-                SvgPicture.asset('assets/svg/orders/pending.svg'),
-                Container(
-                  height: 55,
-                  width: 1,
-                  color: Colors.grey,
-                ),
-                SvgPicture.asset('assets/svg/orders/pending.svg'),
-                Container(
-                  height: 55,
-                  width: 1,
-                  color: Colors.grey,
-                ),
-                SvgPicture.asset('assets/svg/orders/pending.svg'),
+                SizedBox(width: 22.w),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Order Placed'),
+                    SizedBox(height: 8.h),
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          'assets/svg/orders/time.svg',
+                          width: 12.w,
+                          color: Colors.grey,
+                        ),
+                        const Text(
+                          '  12.30 | 16 Aug 2021',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
               ],
             ),
           ),
-          SizedBox(width: 22.w),
           Container(
-            //color: Colors.yellow,
-            height: 450,
-            width: 310,
-            child: Column(
+            width: double.infinity,
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text('Order Placed'),
-                SizedBox(height: 8.h),
-                Row(
+                Column(
                   children: [
-                    SvgPicture.asset(
-                      'assets/svg/orders/time.svg',
-                      width: 12.w,
-                      color: Colors.grey,
-                    ),
-                    const Text(
-                      '  12.30 | 16 Aug 2021',
-                      style: TextStyle(color: Colors.grey),
-                    ),
+                    SvgPicture.asset('assets/svg/orders/completed.svg'),
+                    const verticalLine(),
                   ],
                 ),
-                SizedBox(height: 8.h),
-                Divider(),
-                SizedBox(height: 8.h),
-                Text('Processing'),
-                SizedBox(height: 8.h),
-                Row(
+                SizedBox(width: 22.w),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SvgPicture.asset(
-                      'assets/svg/orders/time.svg',
-                      width: 12.w,
-                      color: Colors.grey,
-                    ),
-                    const Text(
-                      '  20 minutes ago',
-                      style: TextStyle(color: Colors.grey),
+                    const Text('Processing'),
+                    SizedBox(height: 8.h),
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          'assets/svg/orders/time.svg',
+                          width: 12.w,
+                          color: Colors.grey,
+                        ),
+                        const Text(
+                          '  20 minutes ago',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
                     ),
                   ],
+                )
+              ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  children: [
+                    SvgPicture.asset('assets/svg/orders/completed.svg'),
+                    const verticalLine(),
+                  ],
                 ),
-                SizedBox(height: 8.h),
-                Divider(),
-                SizedBox(height: 8.h),
-                Text('Being prepared'),
-                SizedBox(height: 8.h),
-                Text(''),
-                SizedBox(height: 8.h),
-                Divider(),
-                SizedBox(height: 8.h),
-                Text('Dispatched. In transit'),
-                SizedBox(height: 8.h),
-                Text(''),
-                SizedBox(height: 8.h),
-                Divider(),
-                SizedBox(height: 8.h),
-                Text('Arrived at location'),
-                SizedBox(height: 8.h),
-                Text(''),
-                SizedBox(height: 8.h),
-                Divider(),
-                SizedBox(height: 8.h),
-                Text('Delivered'),
+                SizedBox(width: 22.w),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Being prepared'),
+                    SizedBox(height: 8.h),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Container(
+            //color: Colors.amber,
+            width: double.infinity,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  children: [
+                    SvgPicture.asset('assets/svg/orders/completed.svg'),
+                    const verticalLine(),
+                  ],
+                ),
+                SizedBox(width: 22.w),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Dispatched. In transit'),
+                    SizedBox(height: 8.h),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  children: [
+                    SvgPicture.asset('assets/svg/orders/completed.svg'),
+                    const verticalLine(),
+                  ],
+                ),
+                SizedBox(width: 22.w),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Delivered at location'),
+                    SizedBox(height: 8.h),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  children: [
+                    SvgPicture.asset('assets/svg/orders/completed.svg'),
+                    // const verticalLine(),
+                  ],
+                ),
+                SizedBox(width: 22.w),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Delivered'),
+                    SizedBox(height: 8.h),
+                  ],
+                )
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class verticalLine extends StatelessWidget {
+  const verticalLine({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 55.h,
+      width: 1.w,
+      color: Colors.grey,
     );
   }
 }

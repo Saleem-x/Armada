@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10">
+  <g id="currency" transform="translate(-52 -448)">
+    <g id="Rectangle_6723" data-name="Rectangle 6723" transform="translate(52 448)" fill="none" stroke="#309b6a" stroke-width="1">
+      <rect width="16" height="10" rx="2" stroke="none"/>
+      <rect x="0.5" y="0.5" width="15" height="9" rx="1.5" fill="none"/>
+    </g>
+    <g id="Ellipse_120" data-name="Ellipse 120" transform="translate(57 450)" fill="none" stroke="#309b6a" stroke-width="1">
+      <circle cx="3" cy="3" r="3" stroke="none"/>
+      <circle cx="3" cy="3" r="2.5" fill="none"/>
+    </g>
+    <g id="Ellipse_121" data-name="Ellipse 121" transform="translate(64 452)" fill="none" stroke="#309b6a" stroke-width="1">
+      <circle cx="1" cy="1" r="1" stroke="none"/>
+      <circle cx="1" cy="1" r="0.5" fill="none"/>
+    </g>
+    <g id="Ellipse_122" data-name="Ellipse 122" transform="translate(54 452)" fill="none" stroke="#309b6a" stroke-width="1">
+      <circle cx="1" cy="1" r="1" stroke="none"/>
+      <circle cx="1" cy="1" r="0.5" fill="none"/>
+    </g>
+  </g>
+</svg>

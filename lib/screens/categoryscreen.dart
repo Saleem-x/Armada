@@ -25,6 +25,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -43,7 +44,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             )),
         title: Text(
           'Categories',
-          style: TextStyle(fontSize: 17.sp),
+          style: TextStyle(fontSize: 19.sp),
         ),
         actions: [
           Padding(
@@ -72,13 +73,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
             child: Column(
               children: [
                 Container(
-                  height: 34.h,
+                  height: 40.0,
                   decoration: BoxDecoration(
-                    color: Colors.white,
                     borderRadius: BorderRadius.circular(20.0),
-                    border: Border.all(
-                        color: Colors.grey
-                            .withOpacity(0.3)), // Set the background color
+                    color: Colors.white,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.3),
@@ -86,22 +84,27 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         offset: const Offset(0, 0),
                         blurStyle: BlurStyle.normal,
                         spreadRadius: 0.2,
-                      )
+                      ),
                     ],
                   ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Search items, brands, categories etc',
-                      contentPadding: const EdgeInsets.all(15.0),
-                      hintStyle: TextStyle(
-                          color: Colors.grey.withOpacity(0.7), fontSize: 11.sp),
-                      prefixIcon: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 11.h),
-                        child: SvgPicture.asset(
-                          'assets/svg/home/search.svg',
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 3),
+                          child: SvgPicture.asset('assets/svg/home/search.svg'),
                         ),
-                      ),
-                      border: InputBorder.none,
+                        SizedBox(width: 8.w),
+                        Expanded(
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              hintText: 'Search here',
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -167,7 +170,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                           SizedBox(width: 15.w),
                                           Text(
                                             'Fruits & Vegetables',
-                                            style: TextStyle(fontSize: 12.sp),
+                                            style: TextStyle(fontSize: 14.sp),
                                           ),
                                         ],
                                       ),
@@ -232,7 +235,7 @@ class YourNewWidget extends StatelessWidget {
               SizedBox(height: 4.h),
               Text(
                 'Dairy',
-                style: TextStyle(fontSize: 8.sp),
+                style: TextStyle(fontSize: 10.sp),
               )
             ],
           ),

@@ -20,6 +20,7 @@ class _SpportScreenState extends State<SpportScreen> {
           backgroundColor: Colors.white,
           surfaceTintColor: Colors.white,
           shadowColor: Colors.grey.withOpacity(0.3),
+          elevation: 0.5,
           toolbarHeight: 48.h,
           leading: Padding(
               padding: EdgeInsets.only(
@@ -38,7 +39,7 @@ class _SpportScreenState extends State<SpportScreen> {
               )),
           title: Text(
             'Support',
-            style: TextStyle(fontSize: 17.sp),
+            style: TextStyle(fontSize: 19.sp),
           ),
           actions: [
             Padding(
@@ -80,14 +81,9 @@ class _SpportScreenState extends State<SpportScreen> {
                           borderRadius: BorderRadius.circular(20)),
                       child: Row(
                         children: [
-                          // SvgPicture.asset(
-                          //   'assets/svg/categories/right.svg',
-                          //   color: Colors.white,
-                          // ),
                           const Icon(
                             Icons.add,
                             color: Colors.white,
-                            //size: 14,
                           ),
                           SizedBox(width: 5.w),
                           Text(
@@ -123,9 +119,6 @@ class _SpportScreenState extends State<SpportScreen> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(15.0),
-                              border: Border.all(
-                                  color: Colors.grey.withOpacity(
-                                      0.3)), // Set the background color
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.3),
@@ -151,26 +144,24 @@ class _SpportScreenState extends State<SpportScreen> {
                                         '16 Aug 2021',
                                         style: TextStyle(
                                             fontWeight: FontWeight.w400,
-                                            fontSize: 10.sp),
+                                            fontSize: 12.sp),
                                       ),
                                       SizedBox(height: 2.h),
                                       Text(
                                         'Divella Penne Pasta 500g',
                                         style: TextStyle(
                                             fontWeight: FontWeight.w400,
-                                            fontSize: 14.sp),
+                                            fontSize: 16.sp),
                                       ),
                                     ],
                                   ),
-                                  //SizedBox(width: 20.w),
-
                                   Column(
                                     children: [
                                       SizedBox(height: 10.h),
                                       Text(
                                         'Open',
                                         style: TextStyle(
-                                            fontSize: 12.sp,
+                                            fontSize: 14.sp,
                                             color: const Color.fromARGB(
                                                 244, 219, 32, 39)),
                                       ),

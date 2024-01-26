@@ -19,6 +19,7 @@ class _PromotionScreenState extends State<PromotionScreen> {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -37,7 +38,7 @@ class _PromotionScreenState extends State<PromotionScreen> {
             )),
         title: Text(
           'Promotion',
-          style: TextStyle(fontSize: 17.sp),
+          style: TextStyle(fontSize: 19.sp),
         ),
         actions: [
           Padding(
@@ -66,10 +67,11 @@ class _PromotionScreenState extends State<PromotionScreen> {
             return Column(
               children: [
                 Container(
-                  height: 175,
+                  height: 185,
                   width: double.infinity,
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   child: Stack(
                     children: [
                       ClipRRect(
@@ -90,7 +92,7 @@ class _PromotionScreenState extends State<PromotionScreen> {
                               color: Colors.transparent.withOpacity(0.4),
                               borderRadius: BorderRadius.circular(15)),
                           child: Padding(
-                            padding: EdgeInsets.only(left: 15.w, top: 10.h),
+                            padding: EdgeInsets.only(left: 15.w, top: 8.h),
                             child: Text(
                               'Expires in 17 Days 12 hours',
                               style: TextStyle(
@@ -127,7 +129,7 @@ class _PromotionScreenState extends State<PromotionScreen> {
                                   'Buy 10 Get 2',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 14.sp,
+                                      fontSize: 15.sp,
                                       color: const Color.fromARGB(
                                           255, 100, 54, 26)),
                                 ),
@@ -136,7 +138,7 @@ class _PromotionScreenState extends State<PromotionScreen> {
                                   'Free Good Promotion',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w300,
-                                      fontSize: 14.sp),
+                                      fontSize: 16.sp),
                                 ),
                                 SizedBox(height: 4.h),
                                 GestureDetector(
@@ -167,13 +169,10 @@ class _PromotionScreenState extends State<PromotionScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 40.h)
+                SizedBox(height: 30.h)
               ],
             );
           },
-          // separatorBuilder: (context, index) {
-          //   return SizedBox(height: 20.h);
-          // },
         ),
       )),
     );

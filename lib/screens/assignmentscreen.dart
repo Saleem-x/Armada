@@ -1,3 +1,4 @@
+import 'package:armada/widgets/bottombuttons.dart';
 import 'package:armada/widgets/qualificationgroup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,40 +25,50 @@ class _AssignmentScreenState extends State<AssignmentScreen> {
                   bottomLeft: Radius.circular(15),
                   bottomRight: Radius.circular(15),
                 ),
-                child: Image.asset('assets/home/promo2.jpg'),
+                child: Image.asset(
+                  'assets/home/promo2.jpg',
+                  color: Colors.black.withOpacity(0.2),
+                  colorBlendMode: BlendMode.darken,
+                ),
               ),
               Container(
-                decoration: BoxDecoration(
-                    color: Colors.transparent.withOpacity(0.14),
-                    borderRadius: const BorderRadius.only(
+                decoration: const BoxDecoration(
+                    // color: Colors.transparent.withOpacity(0.3),
+                    borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(15),
                         bottomRight: Radius.circular(15))),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+                  padding: const EdgeInsets.only(top: 40, left: 27, right: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
-                            child: SvgPicture.asset(
-                              'assets/svg/categories/back.svg',
-                              width: 10,
-                              color: Colors.white,
+                          Container(
+                            child: Row(
+                              children: [
+                                GestureDetector(
+                                  child: SvgPicture.asset(
+                                    'assets/svg/categories/back.svg',
+                                    width: 10,
+                                    color: Colors.white,
+                                  ),
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                                SizedBox(width: 20.w),
+                                Text(
+                                  'Buy 10 Get 2',
+                                  style: TextStyle(
+                                      fontSize: 20.sp,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
                             ),
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
                           ),
-                          SizedBox(width: 20.w),
-                          Text(
-                            'Buy 10 Get 2',
-                            style: TextStyle(
-                                fontSize: 17.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          SizedBox(width: 210.w),
                           GestureDetector(
                             child: SvgPicture.asset(
                               'assets/svg/home/cart.svg',
@@ -74,7 +85,7 @@ class _AssignmentScreenState extends State<AssignmentScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 16.h),
+                      SizedBox(height: 10.h),
                       Text(
                         'Buy 10 Get 2',
                         style: TextStyle(
@@ -86,17 +97,17 @@ class _AssignmentScreenState extends State<AssignmentScreen> {
                       Text(
                         'Free Good Promoion',
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.w400),
                       ),
-                      SizedBox(height: 4.h),
+                      SizedBox(height: 3.h),
                       Row(
                         children: [
                           Text(
                             'Start Date : 12 January 2022',
                             style: TextStyle(
-                                fontSize: 11.sp,
+                                fontSize: 10.sp,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500),
                           ),
@@ -104,15 +115,13 @@ class _AssignmentScreenState extends State<AssignmentScreen> {
                           Text(
                             'End Date : 17 October 2022',
                             style: TextStyle(
-                                fontSize: 11.sp,
+                                fontSize: 10.sp,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500),
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 3,
-                      )
+                      SizedBox(height: 3.h)
                     ],
                   ),
                 ),
@@ -128,11 +137,38 @@ class _AssignmentScreenState extends State<AssignmentScreen> {
                     Row(
                       children: [
                         SizedBox(width: 20.w),
+                        Image.asset('assets/images/eligible.png'),
+                        SizedBox(width: 20.w),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'You are eligible for 5 Pc Free',
+                              style: TextStyle(
+                                  fontSize: 16.sp,
+                                  color: const Color.fromARGB(244, 219, 32, 39),
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            Text(
+                              'Please select from he below assignment group',
+                              style: TextStyle(
+                                  fontSize: 12.sp,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w400),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 15.h),
+                    Row(
+                      children: [
+                        SizedBox(width: 20.w),
                         Text(
                           'Assignment Group',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              fontSize: 14.sp,
+                              fontSize: 16.sp,
                               color: const Color.fromARGB(255, 100, 54, 26)),
                         ),
                       ],
@@ -150,55 +186,9 @@ class _AssignmentScreenState extends State<AssignmentScreen> {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 15),
-        child: Container(
-          width: double.infinity,
-          height: 55.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: const Color.fromARGB(244, 219, 32, 39),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 10.h),
-                    Text(
-                      'You are eligible for',
-                      style: TextStyle(fontSize: 10.sp, color: Colors.yellow),
-                    ),
-                    Text(
-                      '5 Pc Free',
-                      style: TextStyle(fontSize: 14.sp, color: Colors.white),
-                    ),
-                  ],
-                ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Row(
-                    children: [
-                      Text(
-                        'Choose From Assignment Group',
-                        style: TextStyle(fontSize: 11.sp, color: Colors.white),
-                      ),
-                      SizedBox(width: 10.w),
-                      SvgPicture.asset(
-                        'assets/svg/home/arrow_right.svg',
-                        height: 10,
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
-      ),
+      floatingActionButton: const Padding(
+          padding: EdgeInsets.only(left: 20, right: 20, bottom: 15),
+          child: BottomButtonsWidget()),
     );
   }
 }

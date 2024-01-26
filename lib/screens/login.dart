@@ -27,18 +27,18 @@ class _LoginScreenState extends State<LoginScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 94.h),
+              SizedBox(height: 80.h),
               SvgPicture.asset('assets/svg/logo.svg'),
-              SizedBox(height: 56.h),
+              SizedBox(height: 40.h),
               Container(
                 width: double.infinity,
-                height: 184.h,
+                //height: 184.h,
                 child: SvgPicture.asset(
                   'assets/svg/login_art.svg',
                   fit: BoxFit.fill,
                 ),
               ),
-              SizedBox(height: 40.h),
+              SizedBox(height: 30.h),
               Container(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40.w),
@@ -48,12 +48,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text(
                         'Login',
                         style: TextStyle(
-                          fontSize: 20.sp,
+                          fontSize: 22.sp,
                           fontWeight: FontWeight.w800,
                           color: const Color(0xFF6f3d1e),
                         ),
                       ),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 10.h),
                       Row(
                         children: [
                           Padding(
@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             decoration: InputDecoration(
                               hintText: 'Email or Userame',
                               hintStyle: TextStyle(
-                                  fontSize: 17.sp,
+                                  fontSize: 19.sp,
                                   fontWeight: FontWeight.w400,
                                   color:
                                       const Color.fromARGB(255, 124, 124, 124)),
@@ -75,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ))
                         ],
                       ),
-                      SizedBox(height: 30.h),
+                      SizedBox(height: 20.h),
                       Row(
                         children: [
                           Padding(
@@ -90,14 +90,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           )
                         ],
                       ),
-                      SizedBox(height: 18.h),
+                      SizedBox(height: 10.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           GestureDetector(
                             child: Text('Forgot Password ?',
                                 style: TextStyle(
-                                    fontSize: 14.sp,
+                                    fontSize: 16.sp,
                                     color:
                                         const Color.fromARGB(244, 175, 25, 30),
                                     fontWeight: FontWeight.w500)),
@@ -111,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 22.h),
+                      SizedBox(height: 15.h),
                       MaterialButton(
                         onPressed: () {
                           Navigator.push(
@@ -121,14 +121,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                       const DailyVerfScreen()));
                         },
                         color: const Color.fromARGB(244, 202, 29, 35),
-                        height: 44.h,
+                        height: 35.h,
                         minWidth: 500.w,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4)),
                         child: Text(
                           'Login',
                           style: TextStyle(
-                              fontSize: 16.sp,
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.w600,
                               color: Colors.white),
                         ),
@@ -137,19 +137,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 50.h),
+              SizedBox(height: 35.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'Yet to verify account?  ',
                     style:
-                        TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
+                        TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
                   ),
                   GestureDetector(
                     child: Text('Verify',
                         style: TextStyle(
-                            fontSize: 14.sp,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             color: const Color.fromARGB(244, 175, 25, 30))),
                     onTap: () {
@@ -161,7 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 30.h),
+              SizedBox(height: 28.h),
               Text(
                 'Powered by',
                 style: TextStyle(fontSize: 6.sp, fontWeight: FontWeight.w600),

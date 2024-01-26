@@ -46,7 +46,7 @@ class _HotDealsState extends State<HotDeals> {
                             color: Colors.transparent.withOpacity(0.4),
                             borderRadius: BorderRadius.circular(15)),
                         child: Padding(
-                          padding: EdgeInsets.only(left: 15.w, top: 10.h),
+                          padding: EdgeInsets.only(left: 15.w, top: 8.h),
                           child: Text(
                             'Expires in 17 Days 12 hours',
                             style:
@@ -83,7 +83,7 @@ class _HotDealsState extends State<HotDeals> {
                                 'Buy 10 Get 2',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 14.sp,
+                                    fontSize: 16.sp,
                                     color:
                                         const Color.fromARGB(255, 100, 54, 26)),
                               ),
@@ -92,7 +92,7 @@ class _HotDealsState extends State<HotDeals> {
                                 'Free Good Promotion',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w300,
-                                    fontSize: 14.sp),
+                                    fontSize: 15.sp),
                               ),
                               SizedBox(height: 4.h),
                               GestureDetector(

@@ -16,9 +16,9 @@ class CustomDropdownMenuItem extends StatelessWidget {
         Text(
           text,
           style:
-              TextStyle(fontSize: 13.sp, color: Colors.black.withOpacity(0.6)),
+              TextStyle(fontSize: 15.sp, color: Colors.black.withOpacity(0.6)),
         ),
-        SizedBox(width: 240.w),
+        SizedBox(width: 193.w),
       ],
     );
   }
@@ -53,7 +53,7 @@ class _InvoiceDropdownWidgetState extends State<InvoiceDropdownWidget> {
     return DropdownButton(
       underline: Container(),
       value: dropdownValue,
-      icon: Icon(Icons.arrow_drop_down),
+      icon: const Icon(Icons.arrow_drop_down),
       items: items.map((String item) {
         // IconData icon =
         //     Icons.circle; // Replace with your desired icon

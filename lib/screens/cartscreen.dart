@@ -22,6 +22,7 @@ class _CartScreenState extends State<CartScreen> {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -43,7 +44,7 @@ class _CartScreenState extends State<CartScreen> {
             )),
         title: Text(
           'Cart',
-          style: TextStyle(fontSize: 17.sp),
+          style: TextStyle(fontSize: 19.sp),
         ),
         actions: [
           Padding(
@@ -54,7 +55,7 @@ class _CartScreenState extends State<CartScreen> {
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   color: const Color.fromARGB(244, 219, 32, 39),
-                  fontSize: 14.sp,
+                  fontSize: 16.sp,
                 ),
               ),
               onTap: () {},
@@ -77,19 +78,12 @@ class _CartScreenState extends State<CartScreen> {
                   children: [
                     Text('Your Order',
                         style: TextStyle(
-                            fontWeight: FontWeight.w400, fontSize: 14.sp)),
+                            fontWeight: FontWeight.w400, fontSize: 16.sp)),
                     Text('3 Items',
                         style: TextStyle(
-                            fontWeight: FontWeight.w400, fontSize: 14.sp)),
+                            fontWeight: FontWeight.w400, fontSize: 16.sp)),
                   ],
                 ),
-                // SizedBox(height: 10.h),
-                /*Container(
-                  height: 320.h,
-                  width: double.infinity,
-                  child: const CartitemsWidget(),
-                ),*/
-
                 const Padding(
                   padding: EdgeInsets.only(top: 14),
                   child: CartitemsWidget(),
@@ -97,13 +91,16 @@ class _CartScreenState extends State<CartScreen> {
                 SizedBox(height: 15.h),
                 Text('Pomotions Applied',
                     style: TextStyle(
-                        fontWeight: FontWeight.w400, fontSize: 14.sp)),
+                        fontWeight: FontWeight.w400, fontSize: 16.sp)),
                 SizedBox(height: 10.h),
-                Container(
-                  height: 150,
-                  width: double.infinity,
-                  child: const CartpromotionWidget(),
-                ),
+                // Container(
+                //   height: 150,
+                //   width: double.infinity,
+                //   child: const CartpromotionWidget(),
+                // ),
+                const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: CartpromotionWidget()),
                 SizedBox(height: 10.h),
                 const DottedLine(
                   dashColor: Colors.grey,
@@ -115,7 +112,7 @@ class _CartScreenState extends State<CartScreen> {
                   Text(
                     'Add Remarks',
                     style: TextStyle(
-                        fontSize: 10.sp,
+                        fontSize: 12.sp,
                         color: const Color.fromARGB(244, 219, 32, 39)),
                   ),
                 ]),
@@ -127,7 +124,7 @@ class _CartScreenState extends State<CartScreen> {
                 Text(
                   'Available Credit Limit: 3,200.00 / 10,000.00',
                   style:
-                      TextStyle(fontWeight: FontWeight.w400, fontSize: 12.sp),
+                      TextStyle(fontWeight: FontWeight.w400, fontSize: 14.sp),
                 ),
                 SizedBox(height: 20.h),
                 Column(
@@ -138,12 +135,12 @@ class _CartScreenState extends State<CartScreen> {
                         Text(
                           'Sub Total',
                           style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 10.sp),
+                              fontWeight: FontWeight.w400, fontSize: 12.sp),
                         ),
                         Text(
                           '1385.00',
                           style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 10.sp),
+                              fontWeight: FontWeight.w400, fontSize: 12.sp),
                         )
                       ],
                     ),
@@ -153,12 +150,12 @@ class _CartScreenState extends State<CartScreen> {
                         Text(
                           'Discount',
                           style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 10.sp),
+                              fontWeight: FontWeight.w400, fontSize: 12.sp),
                         ),
                         Text(
                           '85.00',
                           style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 10.sp),
+                              fontWeight: FontWeight.w400, fontSize: 12.sp),
                         )
                       ],
                     ),
@@ -168,12 +165,12 @@ class _CartScreenState extends State<CartScreen> {
                         Text(
                           'VAT',
                           style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 10.sp),
+                              fontWeight: FontWeight.w400, fontSize: 12.sp),
                         ),
                         Text(
                           '65.00 (5%)',
                           style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 10.sp),
+                              fontWeight: FontWeight.w400, fontSize: 12.sp),
                         )
                       ],
                     )
@@ -200,12 +197,12 @@ class _CartScreenState extends State<CartScreen> {
                   Text(
                     'Total Amount',
                     style:
-                        TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w500),
+                        TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
                   ),
                   Text(
                     'AED 1365.00',
                     style:
-                        TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+                        TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
                   )
                 ],
               ),
@@ -226,7 +223,7 @@ class _CartScreenState extends State<CartScreen> {
                     Text(
                       'Select Free Good',
                       style: TextStyle(
-                          fontSize: 12.sp,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
                           color: Colors.white),
                     ),

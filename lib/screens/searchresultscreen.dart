@@ -49,6 +49,7 @@ class _SearchResultState extends State<SearchResult> {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.3),
+        elevation: 0.5,
         toolbarHeight: 48.h,
         leading: Padding(
             padding: EdgeInsets.only(
@@ -67,7 +68,7 @@ class _SearchResultState extends State<SearchResult> {
             )),
         title: Text(
           'Search Result',
-          style: TextStyle(fontSize: 17.sp),
+          style: TextStyle(fontSize: 19.sp),
         ),
       ),
       body: SafeArea(
@@ -83,13 +84,10 @@ class _SearchResultState extends State<SearchResult> {
                 SizedBox(width: 20.w),
                 Expanded(
                   child: Container(
-                    height: 34.h,
+                    height: 40.0,
                     decoration: BoxDecoration(
-                      color: Colors.white,
                       borderRadius: BorderRadius.circular(20.0),
-                      border: Border.all(
-                          color: Colors.grey
-                              .withOpacity(0.3)), // Set the background color
+                      color: Colors.white,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -97,26 +95,30 @@ class _SearchResultState extends State<SearchResult> {
                           offset: const Offset(0, 0),
                           blurStyle: BlurStyle.normal,
                           spreadRadius: 0.2,
-                        )
+                        ),
                       ],
                     ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: 'Milk',
-                          contentPadding:
-                              const EdgeInsets.symmetric(vertical: -6),
-                          prefixIcon: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 11.h),
-                            child: SvgPicture.asset(
-                              'assets/svg/home/search.svg',
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child:
+                                SvgPicture.asset('assets/svg/home/search.svg'),
+                          ),
+                          SizedBox(width: 8.w),
+                          Expanded(
+                            child: TextFormField(
+                              decoration: const InputDecoration(
+                                hintText: 'Search here',
+                                border: InputBorder.none,
+                              ),
                             ),
                           ),
-                          border: InputBorder.none,
-                          suffixIcon: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child:
-                                SvgPicture.asset('assets/svg/home/clear.svg'),
-                          )),
+                          SvgPicture.asset('assets/svg/home/clear.svg'),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -149,7 +151,6 @@ class _SearchResultState extends State<SearchResult> {
                   itemBuilder: (context, index) => Container(
                     height: 230.h,
                     width: 185.w,
-                    //color: Colors.red,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10.0),
@@ -179,7 +180,7 @@ class _SearchResultState extends State<SearchResult> {
                           SizedBox(height: 4.h),
                           Text(
                             'Rainbow Milk Cream',
-                            style: TextStyle(fontSize: 12.sp),
+                            style: TextStyle(fontSize: 14.sp),
                           ),
                           SizedBox(height: 10.h),
                           Row(
@@ -194,7 +195,7 @@ class _SearchResultState extends State<SearchResult> {
                                     children: [
                                       Text(
                                         'Cs',
-                                        style: TextStyle(fontSize: 10.sp),
+                                        style: TextStyle(fontSize: 12.sp),
                                       ),
                                       SizedBox(width: 15.w),
                                       Icon(Icons.keyboard_arrow_down,
@@ -205,7 +206,7 @@ class _SearchResultState extends State<SearchResult> {
                                   Text(
                                     'AED 30.00',
                                     style: TextStyle(
-                                        fontSize: 8.sp, color: Colors.red),
+                                        fontSize: 10.sp, color: Colors.red),
                                   ),
                                 ],
                               ),
@@ -240,7 +241,7 @@ class _SearchResultState extends State<SearchResult> {
                                     children: [
                                       Text(
                                         'Pc',
-                                        style: TextStyle(fontSize: 10.sp),
+                                        style: TextStyle(fontSize: 12.sp),
                                       ),
                                       SizedBox(width: 15.w),
                                       Icon(Icons.keyboard_arrow_down,
@@ -251,7 +252,7 @@ class _SearchResultState extends State<SearchResult> {
                                   Text(
                                     'AED 30.00',
                                     style: TextStyle(
-                                        fontSize: 8.sp, color: Colors.red),
+                                        fontSize: 10.sp, color: Colors.red),
                                   ),
                                 ],
                               ),

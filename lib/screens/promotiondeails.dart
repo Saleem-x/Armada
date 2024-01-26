@@ -26,40 +26,50 @@ class _PromotionDetailsScreenState extends State<PromotionDetailsScreen> {
                   bottomLeft: Radius.circular(15),
                   bottomRight: Radius.circular(15),
                 ),
-                child: Image.asset('assets/home/promo2.jpg'),
+                child: Image.asset(
+                  'assets/home/promo2.jpg',
+                  color: Colors.black.withOpacity(0.2),
+                  colorBlendMode: BlendMode.darken,
+                ),
               ),
               Container(
-                decoration: BoxDecoration(
-                    color: Colors.transparent.withOpacity(0.14),
-                    borderRadius: const BorderRadius.only(
+                decoration: const BoxDecoration(
+                    // color: Colors.transparent.withOpacity(0.3),
+                    borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(15),
                         bottomRight: Radius.circular(15))),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+                  padding: const EdgeInsets.only(top: 40, left: 27, right: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
-                            child: SvgPicture.asset(
-                              'assets/svg/categories/back.svg',
-                              width: 10,
-                              color: Colors.white,
+                          Container(
+                            child: Row(
+                              children: [
+                                GestureDetector(
+                                  child: SvgPicture.asset(
+                                    'assets/svg/categories/back.svg',
+                                    width: 10,
+                                    color: Colors.white,
+                                  ),
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                                SizedBox(width: 20.w),
+                                Text(
+                                  'Buy 10 Get 2',
+                                  style: TextStyle(
+                                      fontSize: 20.sp,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
                             ),
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
                           ),
-                          SizedBox(width: 20.w),
-                          Text(
-                            'Buy 10 Get 2',
-                            style: TextStyle(
-                                fontSize: 17.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          SizedBox(width: 210.w),
                           GestureDetector(
                             child: SvgPicture.asset(
                               'assets/svg/home/cart.svg',
@@ -76,7 +86,7 @@ class _PromotionDetailsScreenState extends State<PromotionDetailsScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 16.h),
+                      SizedBox(height: 10.h),
                       Text(
                         'Buy 10 Get 2',
                         style: TextStyle(
@@ -88,17 +98,17 @@ class _PromotionDetailsScreenState extends State<PromotionDetailsScreen> {
                       Text(
                         'Free Good Promoion',
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.w400),
                       ),
-                      SizedBox(height: 4.h),
+                      SizedBox(height: 3.h),
                       Row(
                         children: [
                           Text(
                             'Start Date : 12 January 2022',
                             style: TextStyle(
-                                fontSize: 11.sp,
+                                fontSize: 10.sp,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500),
                           ),
@@ -106,15 +116,13 @@ class _PromotionDetailsScreenState extends State<PromotionDetailsScreen> {
                           Text(
                             'End Date : 17 October 2022',
                             style: TextStyle(
-                                fontSize: 11.sp,
+                                fontSize: 10.sp,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500),
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 3,
-                      )
+                      SizedBox(height: 3.h)
                     ],
                   ),
                 ),
@@ -134,7 +142,7 @@ class _PromotionDetailsScreenState extends State<PromotionDetailsScreen> {
                           'Promotion Range',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              fontSize: 14.sp,
+                              fontSize: 16.sp,
                               color: const Color.fromARGB(255, 100, 54, 26)),
                         ),
                       ],
@@ -152,7 +160,7 @@ class _PromotionDetailsScreenState extends State<PromotionDetailsScreen> {
                           'Qualification Group',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              fontSize: 14.sp,
+                              fontSize: 16.sp,
                               color: const Color.fromARGB(255, 100, 54, 26)),
                         ),
                       ],
@@ -186,8 +194,8 @@ class _PromotionDetailsScreenState extends State<PromotionDetailsScreen> {
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: 10.h),
                     Text(
                       'You are eligible for',
                       style: TextStyle(fontSize: 10.sp, color: Colors.yellow),
@@ -206,6 +214,7 @@ class _PromotionDetailsScreenState extends State<PromotionDetailsScreen> {
                             builder: (context) => const AssignmentScreen()));
                   },
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         'Choose From Assignment Group',
