@@ -46,8 +46,8 @@ class _DocumentsCalendarWidgetState extends State<DocumentsCalendarWidget> {
             }
           },
           child: Container(
-            height: 50.h,
-            width: 175.w,
+            height: 45.h,
+            width: 150.w,
             decoration: BoxDecoration(
               color: Colors.transparent, // Set the background color
               border: Border.all(color: Colors.grey.withOpacity(0.4)),

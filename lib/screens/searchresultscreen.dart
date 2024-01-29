@@ -1,3 +1,5 @@
+import 'package:armada/widgets/freqorddropdwnwidget.dart';
+import 'package:armada/widgets/pcdropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -149,7 +151,7 @@ class _SearchResultState extends State<SearchResult> {
                       crossAxisSpacing: 5,
                       mainAxisSpacing: 10),
                   itemBuilder: (context, index) => Container(
-                    height: 230.h,
+                    //height: 230.h,
                     width: 185.w,
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -168,7 +170,7 @@ class _SearchResultState extends State<SearchResult> {
                       ],
                     ),
                     child: Padding(
-                      padding: EdgeInsets.only(left: 10.w, top: 10.h),
+                      padding: EdgeInsets.only(left: 10.w),
                       child: Column(
                         //crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -177,32 +179,19 @@ class _SearchResultState extends State<SearchResult> {
                             height: 100.h,
                             width: 75.w,
                           ),
-                          SizedBox(height: 4.h),
+
                           Text(
                             'Rainbow Milk Cream',
-                            style: TextStyle(fontSize: 14.sp),
+                            style: TextStyle(fontSize: 13.sp),
                           ),
-                          SizedBox(height: 10.h),
+                          // SizedBox(height: 10.h),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Column(
                                 //crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Cs',
-                                        style: TextStyle(fontSize: 12.sp),
-                                      ),
-                                      SizedBox(width: 15.w),
-                                      Icon(Icons.keyboard_arrow_down,
-                                          color: Colors.grey, size: 12.sp),
-                                    ],
-                                  ),
-                                  SizedBox(height: 3.h),
+                                  const FreqDrpDownWidget(),
                                   Text(
                                     'AED 30.00',
                                     style: TextStyle(
@@ -228,27 +217,14 @@ class _SearchResultState extends State<SearchResult> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 12.h),
+
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Column(
                                 //crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Pc',
-                                        style: TextStyle(fontSize: 12.sp),
-                                      ),
-                                      SizedBox(width: 15.w),
-                                      Icon(Icons.keyboard_arrow_down,
-                                          color: Colors.grey, size: 12.sp),
-                                    ],
-                                  ),
-                                  SizedBox(height: 3.h),
+                                  const PcDrpDownWidget(),
                                   Text(
                                     'AED 30.00',
                                     style: TextStyle(
