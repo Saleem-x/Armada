@@ -107,7 +107,7 @@ class _$ClientfailureImpl implements Clientfailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$ClientfailureImpl);
   }
@@ -215,7 +215,7 @@ class _$ServerfailureImpl implements Serverfailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$ServerfailureImpl);
   }
@@ -341,7 +341,7 @@ class _$NetworkerrorImpl implements Networkerror {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NetworkerrorImpl &&
