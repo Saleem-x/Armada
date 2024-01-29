@@ -1,5 +1,5 @@
-import 'package:armada/widgets/freqorddropdwnwidget.dart';
-import 'package:armada/widgets/pcdropdown.dart';
+import 'package:armada/feature/widgets/freqorddropdwnwidget.dart';
+import 'package:armada/feature/widgets/pcdropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
