@@ -59,9 +59,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const CartScreen()));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CartScreen(),
+                  ),
+                );
               },
             ),
           )
@@ -223,11 +225,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 15.h),
+              SizedBox(
+                height: 15.h,
+              ),
               const SizedBox(
                 height: 200,
                 width: double.infinity,
                 child: HotDeals(),
+              ),
+              SizedBox(
+                height: 10.h,
               ),
             ],
           ),
