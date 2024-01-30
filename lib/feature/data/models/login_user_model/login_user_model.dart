@@ -5,45 +5,45 @@ part 'login_user_model.g.dart';
 @JsonSerializable()
 class LoginUserModel {
   @JsonKey(name: 'Title')
-  String? title;
+  dynamic title;
   @JsonKey(name: 'Descr')
-  String? descr;
+  dynamic descr;
   @JsonKey(name: 'userID')
-  String? userId;
-  String? firstName;
-  String? lastName;
+  dynamic userId;
+  dynamic firstName;
+  dynamic lastName;
   @JsonKey(name: 'FirstnameArbic')
-  String? firstnameArbic;
+  dynamic firstnameArbic;
   @JsonKey(name: 'LastnameArabic')
-  String? lastnameArabic;
+  dynamic lastnameArabic;
   @JsonKey(name: 'cus_ID')
-  String? cusId;
+  dynamic cusId;
   @JsonKey(name: 'MobileNumber')
-  String? mobileNumber;
+  dynamic mobileNumber;
   @JsonKey(name: 'cus_Name')
-  String? cusName;
+  dynamic cusName;
   @JsonKey(name: 'cus_Code')
-  String? cusCode;
+  dynamic cusCode;
   @JsonKey(name: 'cus_Currency')
-  String? cusCurrency;
+  dynamic cusCurrency;
   @JsonKey(name: 'cus_CountryCode')
-  String? cusCountryCode;
+  dynamic cusCountryCode;
   @JsonKey(name: 'cus_VAT')
-  String? cusVat;
+  dynamic cusVat;
   @JsonKey(name: 'cus_MobileNumber')
-  String? cusMobileNumber;
-  String? email;
+  dynamic cusMobileNumber;
+  dynamic email;
   @JsonKey(name: 'cus_AvailableCredit')
-  String? cusAvailableCredit;
+  dynamic cusAvailableCredit;
   @JsonKey(name: 'cus_TotalCredit')
-  String? cusTotalCredit;
+  dynamic cusTotalCredit;
   @JsonKey(name: 'Roles')
-  String? roles;
+  dynamic roles;
   @JsonKey(name: 'csh_Name')
-  String? cshName;
-  String? isverified;
+  dynamic cshName;
+  dynamic isverified;
   @JsonKey(name: 'Newuser')
-  String? newuser;
+  dynamic newuser;
 
   LoginUserModel({
     this.title,

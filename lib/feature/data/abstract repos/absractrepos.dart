@@ -7,6 +7,8 @@ import 'package:armada/feature/data/models/ftrd_sub_catgry_model/ftrd_sub_catgry
 import 'package:armada/feature/data/models/insert_cart_model/insert_cart_model.dart';
 import 'package:armada/feature/data/models/inset_cart_resp_model/inset_cart_resp_model.dart';
 import 'package:armada/feature/data/models/promotions_model/promotions_model.dart';
+import 'package:armada/feature/data/models/login_user_model/login_user_model.dart';
+
 import 'package:armada/feature/data/models/recent_ordered/recent_ordered.dart';
 import 'package:dartz/dartz.dart';
 
@@ -38,4 +40,9 @@ abstract class ICartOperationRepo {
 abstract class IPromotionsRepo {
   Future<Either<MainFailures, List<PromotionsModel>>> getallpromotions();
   Future<Either<MainFailures, List<ActivePromotions>>> getallActivepromotions();
+}
+
+abstract class ILoginRepo {
+  Future<Either<MainFailures, LoginUserModel>> loginUserRepo(
+      String username, String password);
 }

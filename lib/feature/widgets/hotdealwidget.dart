@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:armada/feature/screens/promotionscreen.dart';
 import 'package:armada/feature/state/bloc/promotions/promtions_bloc.dart';
 import 'package:flutter/material.dart';

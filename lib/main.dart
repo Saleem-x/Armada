@@ -6,6 +6,7 @@ import 'package:armada/feature/state/bloc/featuredcategories/featuredcategories_
 import 'package:armada/feature/state/bloc/promotions/promtions_bloc.dart';
 import 'package:armada/feature/state/bloc/recentorders/recent_orders_bloc.dart';
 import 'package:armada/feature/state/cubit/counterhome/counter_home_cubit.dart';
+import 'package:armada/feature/state/bloc/login/login_bloc.dart';
 import 'package:armada/feature/state/cubit/homecarousal/home_carousalchanger_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,7 +24,6 @@ class ArmadaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      //designSize: const Size(411.4, 866.3),
       builder: (context, child) {
         return MultiBlocProvider(
           providers: [
@@ -44,6 +44,9 @@ class ArmadaApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => getit<CartoperationsBloc>(),
+            ),
+            BlocProvider(
+              create: (context) => getit<LoginBloc>(),
             ),
             BlocProvider<CounterHomeCubit>(
               create: (context) => CounterHomeCubit(),

@@ -16,7 +16,7 @@ class CustomDropdownMenuItem extends StatelessWidget {
           style:
               TextStyle(fontSize: 15.sp, color: Colors.black.withOpacity(0.6)),
         ),
-        SizedBox(width: 225.w),
+        SizedBox(width: 172.w),
       ],
     );
   }

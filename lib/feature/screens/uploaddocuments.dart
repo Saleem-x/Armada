@@ -153,7 +153,7 @@ class _UploadDocumentsScreenState extends State<UploadDocumentsScreen> {
                                   fontSize: 16.sp)),
                         ],
                       ))),
-              SizedBox(height: 345.h),
+              SizedBox(height: 190.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
