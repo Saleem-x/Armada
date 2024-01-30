@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomDropdownMenuItem extends StatelessWidget {
   final String text;
 
-  CustomDropdownMenuItem({required this.text});
+  const CustomDropdownMenuItem({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

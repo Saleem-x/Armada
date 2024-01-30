@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -171,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               SizedBox(height: 5.h),
-              Container(
+              SizedBox(
                 height: 120.h,
                 width: double.infinity,
                 child: const SubCategory(),
@@ -190,10 +190,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               SizedBox(height: 10.h),
-              Container(
+              const SizedBox(
                 width: double.infinity,
                 height: 160,
-                child: const FeaturedCategory(),
+                child: FeaturedCategory(),
               ),
               Row(
                 children: [

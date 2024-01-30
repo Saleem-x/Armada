@@ -11,7 +11,7 @@ class SubCategory extends StatefulWidget {
 class _SubCategoryState extends State<SubCategory> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       //height: 150,
       width: double.infinity,
 
@@ -30,8 +30,9 @@ class _SubCategoryState extends State<SubCategory> {
                     return SizedBox(
                       width: 95.w,
                       child: Card(
-                        color: Color.fromARGB(255, 213, 243, 236),
-                        surfaceTintColor: Color.fromARGB(255, 213, 243, 236),
+                        color: const Color.fromARGB(255, 213, 243, 236),
+                        surfaceTintColor:
+                            const Color.fromARGB(255, 213, 243, 236),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15)),
                         child: Padding(

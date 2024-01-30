@@ -1,6 +1,6 @@
+import 'package:armada/feature/data/di/injectable.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:armada/feature/data/di/injectable.config.dart';
 
 final getit = GetIt.instance;
 

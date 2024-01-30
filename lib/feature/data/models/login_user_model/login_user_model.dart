@@ -4,75 +4,75 @@ part 'login_user_model.g.dart';
 
 @JsonSerializable()
 class LoginUserModel {
-	@JsonKey(name: 'Title') 
-	String? title;
-	@JsonKey(name: 'Descr') 
-	String? descr;
-	@JsonKey(name: 'userID') 
-	String? userId;
-	String? firstName;
-	String? lastName;
-	@JsonKey(name: 'FirstnameArbic') 
-	String? firstnameArbic;
-	@JsonKey(name: 'LastnameArabic') 
-	String? lastnameArabic;
-	@JsonKey(name: 'cus_ID') 
-	String? cusId;
-	@JsonKey(name: 'MobileNumber') 
-	String? mobileNumber;
-	@JsonKey(name: 'cus_Name') 
-	String? cusName;
-	@JsonKey(name: 'cus_Code') 
-	String? cusCode;
-	@JsonKey(name: 'cus_Currency') 
-	String? cusCurrency;
-	@JsonKey(name: 'cus_CountryCode') 
-	String? cusCountryCode;
-	@JsonKey(name: 'cus_VAT') 
-	String? cusVat;
-	@JsonKey(name: 'cus_MobileNumber') 
-	String? cusMobileNumber;
-	String? email;
-	@JsonKey(name: 'cus_AvailableCredit') 
-	String? cusAvailableCredit;
-	@JsonKey(name: 'cus_TotalCredit') 
-	String? cusTotalCredit;
-	@JsonKey(name: 'Roles') 
-	String? roles;
-	@JsonKey(name: 'csh_Name') 
-	String? cshName;
-	String? isverified;
-	@JsonKey(name: 'Newuser') 
-	String? newuser;
+  @JsonKey(name: 'Title')
+  dynamic title;
+  @JsonKey(name: 'Descr')
+  dynamic descr;
+  @JsonKey(name: 'userID')
+  dynamic userId;
+  dynamic firstName;
+  dynamic lastName;
+  @JsonKey(name: 'FirstnameArbic')
+  dynamic firstnameArbic;
+  @JsonKey(name: 'LastnameArabic')
+  dynamic lastnameArabic;
+  @JsonKey(name: 'cus_ID')
+  dynamic cusId;
+  @JsonKey(name: 'MobileNumber')
+  dynamic mobileNumber;
+  @JsonKey(name: 'cus_Name')
+  dynamic cusName;
+  @JsonKey(name: 'cus_Code')
+  dynamic cusCode;
+  @JsonKey(name: 'cus_Currency')
+  dynamic cusCurrency;
+  @JsonKey(name: 'cus_CountryCode')
+  dynamic cusCountryCode;
+  @JsonKey(name: 'cus_VAT')
+  dynamic cusVat;
+  @JsonKey(name: 'cus_MobileNumber')
+  dynamic cusMobileNumber;
+  dynamic email;
+  @JsonKey(name: 'cus_AvailableCredit')
+  dynamic cusAvailableCredit;
+  @JsonKey(name: 'cus_TotalCredit')
+  dynamic cusTotalCredit;
+  @JsonKey(name: 'Roles')
+  dynamic roles;
+  @JsonKey(name: 'csh_Name')
+  dynamic cshName;
+  dynamic isverified;
+  @JsonKey(name: 'Newuser')
+  dynamic newuser;
 
-	LoginUserModel({
-		this.title, 
-		this.descr, 
-		this.userId, 
-		this.firstName, 
-		this.lastName, 
-		this.firstnameArbic, 
-		this.lastnameArabic, 
-		this.cusId, 
-		this.mobileNumber, 
-		this.cusName, 
-		this.cusCode, 
-		this.cusCurrency, 
-		this.cusCountryCode, 
-		this.cusVat, 
-		this.cusMobileNumber, 
-		this.email, 
-		this.cusAvailableCredit, 
-		this.cusTotalCredit, 
-		this.roles, 
-		this.cshName, 
-		this.isverified, 
-		this.newuser, 
-	});
+  LoginUserModel({
+    this.title,
+    this.descr,
+    this.userId,
+    this.firstName,
+    this.lastName,
+    this.firstnameArbic,
+    this.lastnameArabic,
+    this.cusId,
+    this.mobileNumber,
+    this.cusName,
+    this.cusCode,
+    this.cusCurrency,
+    this.cusCountryCode,
+    this.cusVat,
+    this.cusMobileNumber,
+    this.email,
+    this.cusAvailableCredit,
+    this.cusTotalCredit,
+    this.roles,
+    this.cshName,
+    this.isverified,
+    this.newuser,
+  });
 
-	factory LoginUserModel.fromJson(Map<String, dynamic> json) {
-		return _$LoginUserModelFromJson(json);
-	}
+  factory LoginUserModel.fromJson(Map<String, dynamic> json) {
+    return _$LoginUserModelFromJson(json);
+  }
 
-	Map<String, dynamic> toJson() => _$LoginUserModelToJson(this);
+  Map<String, dynamic> toJson() => _$LoginUserModelToJson(this);
 }

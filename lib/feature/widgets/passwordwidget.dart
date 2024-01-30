@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PasswordFieldWithVisibilityToggle extends StatefulWidget {
+  final TextEditingController controller;
+  const PasswordFieldWithVisibilityToggle(
+      {super.key, required this.controller});
+
   @override
   _PasswordFieldWithVisibilityToggleState createState() =>
       _PasswordFieldWithVisibilityToggleState();
@@ -14,6 +18,13 @@ class _PasswordFieldWithVisibilityToggleState
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter password';
+        }
+        return null;
+      },
+      controller: widget.controller,
       obscureText: !_passwordVisible,
       decoration: InputDecoration(
         hintText: 'Password',
