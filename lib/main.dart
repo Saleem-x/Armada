@@ -1,7 +1,11 @@
 import 'package:armada/feature/data/di/injectable.dart';
 import 'package:armada/feature/screens/login.dart';
 import 'package:armada/feature/state/bloc/banners/banners_bloc.dart';
+import 'package:armada/feature/state/bloc/cartoperations/cartoperations_bloc.dart';
 import 'package:armada/feature/state/bloc/featuredcategories/featuredcategories_bloc.dart';
+import 'package:armada/feature/state/bloc/promotions/promtions_bloc.dart';
+import 'package:armada/feature/state/bloc/recentorders/recent_orders_bloc.dart';
+import 'package:armada/feature/state/cubit/counterhome/counter_home_cubit.dart';
 import 'package:armada/feature/state/cubit/homecarousal/home_carousalchanger_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,6 +35,18 @@ class ArmadaApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => getit<FeaturedcategoriesBloc>(),
+            ),
+            BlocProvider(
+              create: (context) => getit<RecentOrdersBloc>(),
+            ),
+            BlocProvider(
+              create: (context) => getit<PromtionsBloc>(),
+            ),
+            BlocProvider(
+              create: (context) => getit<CartoperationsBloc>(),
+            ),
+            BlocProvider<CounterHomeCubit>(
+              create: (context) => CounterHomeCubit(),
             ),
           ],
           child: MaterialApp(

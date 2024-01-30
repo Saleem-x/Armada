@@ -1,5 +1,8 @@
 import 'package:armada/feature/screens/cartscreen.dart';
 import 'package:armada/feature/screens/categoryscreen.dart';
+import 'package:armada/feature/state/bloc/featuredcategories/featuredcategories_bloc.dart';
+import 'package:armada/feature/state/bloc/promotions/promtions_bloc.dart';
+import 'package:armada/feature/state/bloc/recentorders/recent_orders_bloc.dart';
 import 'package:armada/feature/widgets/drawerwidget.dart';
 import 'package:armada/feature/widgets/featuredwidget.dart';
 import 'package:armada/feature/widgets/freqorderedwidget.dart';
@@ -7,19 +10,26 @@ import 'package:armada/feature/widgets/hotdealwidget.dart';
 import 'package:armada/feature/widgets/slidingwidget.dart';
 import 'package:armada/feature/widgets/subcategorywidget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
   Widget build(BuildContext context) {
+    // WidgetsBinding.instance.addPersistentFrameCallback(
+    //   (_) {
+    //   },
+    // );
+    context
+        .read<FeaturedcategoriesBloc>()
+        .add(const GetallFeaturedCategoriesEvent());
+    context.read<RecentOrdersBloc>().add(
+          const GetRecentOrdersEvent(cusID: '7', userID: '3155'),
+        );
+    context.read<PromtionsBloc>().add(const Getallpromotions());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

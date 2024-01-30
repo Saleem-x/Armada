@@ -124,7 +124,7 @@ class _CartitemsWidgetState extends State<CartitemsWidget> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const FreqDrpDownWidget(),
+                                  FreqDrpDownWidget(),
                                   Text(
                                     'AED 30.00',
                                     style: TextStyle(

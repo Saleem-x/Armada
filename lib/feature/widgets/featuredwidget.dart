@@ -3,14 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FeaturedCategory extends StatefulWidget {
+class FeaturedCategory extends StatelessWidget {
   const FeaturedCategory({super.key});
 
-  @override
-  State<FeaturedCategory> createState() => _FeaturedCategoryState();
-}
-
-class _FeaturedCategoryState extends State<FeaturedCategory> {
   @override
   Widget build(BuildContext context) {
     return Padding(

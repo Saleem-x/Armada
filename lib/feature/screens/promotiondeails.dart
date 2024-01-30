@@ -46,29 +46,27 @@ class _PromotionDetailsScreenState extends State<PromotionDetailsScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            child: Row(
-                              children: [
-                                GestureDetector(
-                                  child: SvgPicture.asset(
-                                    'assets/svg/categories/back.svg',
-                                    width: 10,
+                          Row(
+                            children: [
+                              GestureDetector(
+                                child: SvgPicture.asset(
+                                  'assets/svg/categories/back.svg',
+                                  width: 10,
+                                  color: Colors.white,
+                                ),
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                              SizedBox(width: 20.w),
+                              Text(
+                                'Buy 10 Get 2',
+                                style: TextStyle(
+                                    fontSize: 20.sp,
                                     color: Colors.white,
-                                  ),
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                ),
-                                SizedBox(width: 20.w),
-                                Text(
-                                  'Buy 10 Get 2',
-                                  style: TextStyle(
-                                      fontSize: 20.sp,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ],
-                            ),
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
                           ),
                           GestureDetector(
                             child: SvgPicture.asset(
@@ -129,49 +127,47 @@ class _PromotionDetailsScreenState extends State<PromotionDetailsScreen> {
               )
             ],
           ),
-          Container(
-            child: Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    Row(
-                      children: [
-                        SizedBox(width: 20.w),
-                        Text(
-                          'Promotion Range',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16.sp,
-                              color: const Color.fromARGB(255, 100, 54, 26)),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 12.h),
-                    Container(
-                      width: double.infinity,
-                      height: 120,
-                      child: const PromotionRange(),
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(width: 20.w),
-                        Text(
-                          'Qualification Group',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16.sp,
-                              color: const Color.fromARGB(255, 100, 54, 26)),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 1.h),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                      child: QualificationGroup(),
-                    ),
-                  ],
-                ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: 20.h),
+                  Row(
+                    children: [
+                      SizedBox(width: 20.w),
+                      Text(
+                        'Promotion Range',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16.sp,
+                            color: const Color.fromARGB(255, 100, 54, 26)),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 12.h),
+                  const SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: PromotionRange(),
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(width: 20.w),
+                      Text(
+                        'Qualification Group',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16.sp,
+                            color: const Color.fromARGB(255, 100, 54, 26)),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 1.h),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                    child: QualificationGroup(),
+                  ),
+                ],
               ),
             ),
           )

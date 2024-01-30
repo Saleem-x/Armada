@@ -36,7 +36,7 @@ class _QualificationGroupState extends State<QualificationGroup> {
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: .8,
+            childAspectRatio: .7,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10),
         itemBuilder: (context, index) => Container(
@@ -79,7 +79,7 @@ class _QualificationGroupState extends State<QualificationGroup> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const FreqDrpDownWidget(),
+                                  FreqDrpDownWidget(),
                                   Text(
                                     'AED 30.00',
                                     style: TextStyle(

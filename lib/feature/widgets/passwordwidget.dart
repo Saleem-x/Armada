@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PasswordFieldWithVisibilityToggle extends StatefulWidget {
+  const PasswordFieldWithVisibilityToggle({super.key});
+
   @override
   _PasswordFieldWithVisibilityToggleState createState() =>
       _PasswordFieldWithVisibilityToggleState();

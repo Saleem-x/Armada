@@ -1,17 +1,15 @@
+import 'package:armada/feature/data/models/promotions_model/promotions_model.dart';
 import 'package:armada/feature/screens/promotiondeails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:intl/intl.dart';
 import 'cartscreen.dart';
 
-class PromotionScreen extends StatefulWidget {
-  const PromotionScreen({super.key});
+class PromotionScreen extends StatelessWidget {
+  final List<PromotionsModel> promotions;
+  const PromotionScreen({super.key, required this.promotions});
 
-  @override
-  State<PromotionScreen> createState() => _PromotionScreenState();
-}
-
-class _PromotionScreenState extends State<PromotionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,6 +61,7 @@ class _PromotionScreenState extends State<PromotionScreen> {
         padding:
             const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 10),
         child: ListView.builder(
+          itemCount: promotions.length,
           itemBuilder: (context, index) {
             return Column(
               children: [
@@ -74,12 +73,30 @@ class _PromotionScreenState extends State<PromotionScreen> {
                   ),
                   child: Stack(
                     children: [
-                      ClipRRect(
+                      /*  ClipRRect(
                         borderRadius: BorderRadius.circular(16),
                         child: Image.asset(
                           'assets/home/promo2.jpg',
                           fit: BoxFit.fill,
                         ),
+                      ), */
+                      Container(
+                        height: 145,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          image: DecorationImage(
+                              image: NetworkImage(
+                                promotions[index].prmImage!,
+                              ),
+                              fit: BoxFit.cover),
+                        ),
+                        /*  child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(16),
+                                  child: Image.asset(
+                                    'assets/home/promo2.jpg',
+                                    fit: BoxFit.fill,
+                                  ),
+                                ), */
                       ),
                       Positioned(
                         left: 20,
@@ -94,7 +111,7 @@ class _PromotionScreenState extends State<PromotionScreen> {
                           child: Padding(
                             padding: EdgeInsets.only(left: 15.w, top: 8.h),
                             child: Text(
-                              'Expires in 17 Days 12 hours',
+                              calculatetime(promotions[index].rcpEndDate!),
                               style: TextStyle(
                                   color: Colors.white.withOpacity(0.8)),
                             ),
@@ -126,7 +143,7 @@ class _PromotionScreenState extends State<PromotionScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Buy 10 Get 2',
+                                  promotions[index].prmName ?? '',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 15.sp,
@@ -135,7 +152,7 @@ class _PromotionScreenState extends State<PromotionScreen> {
                                 ),
                                 SizedBox(height: 4.h),
                                 Text(
-                                  'Free Good Promotion',
+                                  promotions[index].prtName ?? '',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w300,
                                       fontSize: 16.sp),
@@ -176,5 +193,29 @@ class _PromotionScreenState extends State<PromotionScreen> {
         ),
       )),
     );
+  }
+
+  calculatetime(String datetime) {
+    DateFormat dateFormat = DateFormat("MM/dd/yyyy hh:mm:ss a");
+
+    DateTime givenDateTime = dateFormat.parse(datetime);
+
+    DateTime now = DateTime.now();
+
+    Duration difference = givenDateTime.difference(now);
+
+    int remainingHours = difference.inHours % 24;
+
+    int remainingDays = difference.inDays;
+
+    if (remainingDays > 0) {
+      if (remainingHours > 0) {
+        return 'Expires in $remainingDays Days $remainingHours hours';
+      } else {
+        return 'Expires in $remainingDays Days';
+      }
+    } else {
+      return 'Expires in $remainingHours hours';
+    }
   }
 }

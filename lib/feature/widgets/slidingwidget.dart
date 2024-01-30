@@ -5,21 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SlidingWidget extends StatefulWidget {
+class SlidingWidget extends StatelessWidget {
   const SlidingWidget({super.key});
 
-  @override
-  State<SlidingWidget> createState() => _SlidingWisgetState();
-}
-
-class _SlidingWisgetState extends State<SlidingWidget> {
   //final CarouselController carousel_Controller = CarouselController();
-
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<BannersBloc>().add(const GetbannersEvent());
-    });
+    context.read<BannersBloc>().add(const GetbannersEvent());
     return BlocBuilder<BannersBloc, BannersState>(
       builder: (context, state) {
         return state.when(
